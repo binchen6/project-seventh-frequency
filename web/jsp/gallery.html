@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第七频率 - 插图画廊</title>
+<link rel="stylesheet" href="../css/fonts.css">
+<style>
+:root{--sepia-base:#c4a77d;--sepia-dark:#7c6448;--sepia-light:#ede0c8;--deco-gold:#d4af37;--deco-gold-light:#f4e4bc;--bg-dark:#17120d;--bg-darker:#0d0a07;--panel:#15100b;--hairline:rgba(212,175,55,.32);--font-display:"ZCOOL QingKe","Cinzel","MiSans",serif;--font-body:"MiSans","Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;--font-mono:"JetBrains Mono","Consolas","Courier New",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;overflow-x:hidden;background:var(--bg-darker);color:var(--sepia-light);font-family:var(--font-body)}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.13;background:linear-gradient(90deg,transparent 0 49%,rgba(212,175,55,.16) 50%,transparent 51%),linear-gradient(0deg,transparent 0 49%,rgba(212,175,55,.1) 50%,transparent 51%);background-size:72px 72px}
+body::after{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.18;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px)}
+.header{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:42px 24px 18px}
+.header-row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:1px solid var(--hairline);padding-bottom:18px}
+h1{color:var(--deco-gold);font-family:var(--font-display);font-size:clamp(1.9rem,5vw,3rem);font-weight:400;line-height:1.1;letter-spacing:.18em}
+.subtitle{margin-top:8px;color:var(--sepia-base);font-family:var(--font-mono);font-size:.82rem;letter-spacing:.24em}
+.back-link{flex:0 0 auto;color:var(--sepia-base);text-decoration:none;font-size:.86rem;letter-spacing:.1em;border:1px solid rgba(196,167,125,.42);padding:9px 14px;transition:color .2s,border-color .2s,background .2s}
+.back-link:hover{color:var(--deco-gold);border-color:var(--deco-gold);background:rgba(212,175,55,.08)}
+.progress-strip{display:flex;align-items:center;gap:12px;margin-top:18px;color:var(--sepia-base);font-size:.88rem}
+.progress-strip b{color:var(--deco-gold);font-size:1rem}
+.progress-track{position:relative;flex:1;height:6px;overflow:hidden;background:rgba(196,167,125,.16)}
+.progress-fill{display:block;width:0%;height:100%;background:linear-gradient(90deg,var(--sepia-dark),var(--deco-gold));transition:width .35s ease}
+.gallery-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px;max-width:1180px;margin:0 auto;padding:20px 24px 64px}
+.illust-card{position:relative;min-height:278px;color:var(--sepia-light);background:linear-gradient(180deg,rgba(24,17,11,.9),rgba(10,8,6,.94));border:1px solid rgba(196,167,125,.3);box-shadow:0 18px 44px rgba(0,0,0,.34);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
+.illust-card.unlocked{cursor:pointer}
+.illust-card.unlocked:hover{transform:translateY(-5px);border-color:var(--deco-gold);box-shadow:0 22px 54px rgba(0,0,0,.46),0 0 24px rgba(212,175,55,.1)}
+.illust-frame{position:relative;margin:8px;overflow:hidden;border:1px solid rgba(212,175,55,.22);background:var(--panel);aspect-ratio:16/9}
+.illust-frame::before,.illust-frame::after{content:"";position:absolute;z-index:3;width:18px;height:18px;border:1px solid var(--deco-gold);opacity:.58;pointer-events:none}
+.illust-frame::before{top:6px;left:6px;border-right:none;border-bottom:none}
+.illust-frame::after{right:6px;bottom:6px;border-left:none;border-top:none}
+.illust-img{width:100%;height:100%;object-fit:cover;display:block;filter:sepia(.18) contrast(1.05);transition:filter .28s ease,transform .28s ease}
+.illust-card.unlocked:hover .illust-img{filter:sepia(0) contrast(1.08);transform:scale(1.025)}
+.locked-plate{position:absolute;inset:0;display:grid;place-items:center;padding:18px;text-align:center;background:linear-gradient(135deg,rgba(13,10,7,.92),rgba(31,22,13,.86))}
+.lock-mark{display:grid;gap:8px;place-items:center}
+.lock-index{width:46px;height:46px;display:grid;place-items:center;color:var(--deco-gold);font-weight:700;border:1px solid rgba(212,175,55,.45);background:rgba(212,175,55,.06)}
+.lock-title{color:var(--deco-gold-light);font-size:1.02rem;letter-spacing:.16em}
+.lock-hint{max-width:18em;color:var(--sepia-dark);font-size:.78rem;line-height:1.6}
+.illust-caption{padding:10px 12px 14px;font-size:.86rem;color:var(--sepia-base);line-height:1.55}
+.illust-chapter{margin-bottom:5px;color:var(--deco-gold);font-size:.72rem;font-weight:700;letter-spacing:.16em}
+.illust-card.locked .illust-caption{color:var(--sepia-dark)}
+.illust-card.locked .illust-chapter{color:rgba(212,175,55,.52)}
+#lightbox{display:none;position:fixed;inset:0;z-index:20;align-items:center;justify-content:center;flex-direction:column;background:rgba(13,10,7,.96);backdrop-filter:blur(12px)}
+#lightbox.active{display:flex}
+#lightboxImg{max-width:min(90vw,1180px);max-height:76vh;object-fit:contain;border:2px solid var(--deco-gold);box-shadow:0 0 56px rgba(212,175,55,.2),0 18px 60px rgba(0,0,0,.55)}
+#lightboxCaption{max-width:min(80vw,900px);margin-top:18px;color:var(--sepia-light);font-size:.95rem;line-height:1.7;text-align:center}
+.lightbox-close,.lightbox-nav{position:absolute;color:var(--sepia-dark);cursor:pointer;background:none;border:none;transition:color .2s}
+.lightbox-close{top:18px;right:26px;font-size:2.4rem}
+.lightbox-nav{top:50%;font-size:3rem;transform:translateY(-50%);padding:0 16px}
+.lightbox-close:hover,.lightbox-nav:hover{color:var(--deco-gold)}
+.lightbox-prev{left:10px}.lightbox-next{right:10px}
+@media(max-width:680px){.header{padding:28px 16px 12px}.header-row{align-items:flex-start;flex-direction:column}.gallery-grid{grid-template-columns:1fr;gap:16px;padding:16px}.illust-card{min-height:250px}.progress-strip{align-items:flex-start;flex-direction:column}.progress-track{width:100%}.lightbox-nav{font-size:2.2rem}.lightbox-prev{left:0}.lightbox-next{right:0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<header class="header">
+<div class="header-row">
+<div>
+<h1>插图画廊</h1>
+<p class="subtitle">ILLUSTRATION ARCHIVE</p>
+</div>
+<a href="../index.html" class="back-link">返回主菜单</a>
+</div>
+<div class="progress-strip">
+<span>案卷解锁 <b id="unlockCount">0 / 0</b></span>
+<span class="progress-track"><span class="progress-fill" id="unlockFill"></span></span>
+</div>
+</header>
+<main class="gallery-grid" id="galleryGrid"></main>
+<div id="lightbox">
+<button class="lightbox-close" id="lbClose" aria-label="关闭">×</button>
+<button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="上一张">&lt;</button>
+<button class="lightbox-nav lightbox-next" id="lbNext" aria-label="下一张">&gt;</button>
+<img id="lightboxImg" src="" alt="">
+<div id="lightboxCaption"></div>
+</div>
+<script>
+const Storage={get:(k,def)=>{try{return JSON.parse(localStorage.getItem('sf_'+k))??def}catch(e){return def}},set:(k,v)=>localStorage.setItem('sf_'+k,JSON.stringify(v))}
+const illustrations=[
+{src:'../assets/illustrations/ch1_sc1_morgue.png',caption:'验尸房里的玻璃珠 - 沈默在钨丝灯下发现舌下异物',chapter:'第一章',scene:'ch1_sc1',hint:'推进第一章验尸房剧情'},
+{src:'../assets/illustrations/ch1_sc2_awakening.png',caption:'尸体瞪眼 - 解剖台上的男尸突然苏醒',chapter:'第一章',scene:'ch1_sc2',hint:'进入第一章深夜异变'},
+{src:'../assets/illustrations/ch1_sc3_shikumen.svg',caption:'石库门暗号 - 雨夜海报背面的频率编号',chapter:'第一章',scene:'ch1_sc3',hint:'追查第一章石库门线索'},
+{src:'../assets/illustrations/ch2_sc2_receiver.svg',caption:'接收机绿眼 - 7830Hz在真空管里睁开',chapter:'第二章',scene:'ch2_sc2',hint:'完成第二章唱片接收机调查'},
+{src:'../assets/illustrations/ch2_sc4_paramount.png',caption:'百乐门舞厅 - 霓虹灯下的爵士乐与红色旗袍',chapter:'第二章',scene:'ch2_sc4',hint:'调查第二章百乐门线索'},
+{src:'../assets/illustrations/ch2_sc5_lab.png',caption:'地下实验室 - 黄铜频率发生器与真空管',chapter:'第二章',scene:'ch2_sc5',hint:'潜入亚美公司地下'},
+{src:'../assets/illustrations/ch3_sc3_dock.png',caption:'十六铺码头 - 雨夜中的帮派冲突',chapter:'第三章',scene:'ch3_sc3',hint:'追查顾老三的情报'},
+{src:'../assets/illustrations/ch3_sc6_fire.png',caption:'亚美大火 - 三个年轻人从火光中奔出',chapter:'第三章',scene:'ch3_sc6',hint:'完成第三章亚美大火'},
+{src:'../assets/illustrations/ch4_sc3_expo.png',caption:'万国博览会 - Art Deco展馆与人潮',chapter:'第四章',scene:'ch4_sc3',hint:'进入万国博览会'},
+{src:'../assets/illustrations/ch4_sc4_transmitter.svg',caption:'地下发射室 - 黄铜线圈像城市的耳蜗',chapter:'第四章',scene:'ch4_sc4',hint:'抵达第四章地下发射室'},
+{src:'../assets/illustrations/ch4_sc5_frequency.png',caption:'频率对决 - 金色与青色声波的干涉图样',chapter:'第四章',scene:'ch4_sc5',hint:'抵达频率对决'},
+{src:'../assets/illustrations/ch5_sc1_false_death.svg',caption:'假死名单 - 红蓝铅笔连起不该存在的生死网',chapter:'第五章',scene:'ch5_sc1',hint:'进入第五章假死名单'},
+{src:'../assets/illustrations/ch5_sc2_choice.png',caption:'最终抉择 - 屏幕上的三个发光选项',chapter:'第五章',scene:'ch5_sc2',hint:'抵达最终抉择'},
+{src:'../assets/illustrations/ch5_ending_hidden.png',caption:'隐藏结局 - 周老板递出泛黄的老照片',chapter:'隐藏',scene:'ch5_sc6',hint:'解锁弦外结局'},
+{src:'../assets/illustrations/minimax/ch1_sc4_dock_tip.png',caption:'顾老三的线报 - 十六铺码头雾气里的黄铜货箱',chapter:'第一章',scene:'ch1_sc4',hint:'推进顾老三的码头线报'},
+{src:'../assets/illustrations/minimax/ch1_sc5_missing_body.png',caption:'失踪的尸体 - 验尸房白布下只剩水痕与胶片',chapter:'第一章',scene:'ch1_sc5',hint:'回到验尸房追查失踪尸体'},
+{src:'../assets/illustrations/ch1_sc6_suzhou_dawn.svg',caption:'黎明的苏州河 - 豆腐花热气与桥的隐喻',chapter:'第一章',scene:'ch1_sc6',hint:'抵达苏州河边的黎明抉择'},
+{src:'../assets/illustrations/minimax/ch2_sc6_sleepers_registry.png',caption:'沉睡者名册 - 编号、照片与被记录的人心',chapter:'第二章',scene:'ch2_sc6',hint:'发现亚美公司的沉睡者名册'},
+{src:'../assets/illustrations/minimax/ch2_sc7_glass_heartbeat.png',caption:'玻璃后的心跳 - 白若雪隔离舱里的微弱回声',chapter:'第二章',scene:'ch2_sc7',hint:'抵达隔离廊并看见白若雪'},
+{src:'../assets/illustrations/ch2_sc8_tao_invitation.svg',caption:'陶启明的邀请 - 茶杯、烟盒与博览会时间',chapter:'第二章',scene:'ch2_sc8',hint:'听完陶启明的邀请'},
+{src:'../assets/illustrations/minimax/ch3_sc7_rain_alliance.png',caption:'雨中的同盟 - 安全屋桌前展开的烧焦图纸',chapter:'第三章',scene:'ch3_sc7',hint:'集结同盟制定反制计划'},
+{src:'../assets/illustrations/minimax/ch3_sc8_suzhou_broadcast.png',caption:'苏州河试播 - 第三条波形在示波器上成形',chapter:'第三章',scene:'ch3_sc8',hint:'完成苏州河旧仓库试播'},
+{src:'../assets/illustrations/ch3_sc9_silent_registry.svg',caption:'无声名单 - 编号后第一次写下名字',chapter:'第三章',scene:'ch3_sc9',hint:'给沉睡者发送姓名锚点'},
+{src:'../assets/illustrations/minimax/ch4_sc6_ruoxue_echo.png',caption:'白若雪的回声 - 隔离舱里传来父亲二字',chapter:'第四章',scene:'ch4_sc6',hint:'触发白若雪的回声窗口'},
+{src:'../assets/illustrations/minimax/ch4_sc8_blackout_minute.png',caption:'停电一分钟 - 黑暗里偷来的五十秒',chapter:'第四章',scene:'ch4_sc8',hint:'经历主控室停电一分钟'},
+{src:'../assets/illustrations/ch5_sc5_institute.svg',caption:'第七频率研究所 - 木牌上的两条规矩',chapter:'第五章',scene:'ch5_sc5',hint:'抵达弦和结局的研究所尾声'}
+]
+const sceneOrder={ch1_sc1:[1,0],ch1_sc2:[1,1],ch1_sc3:[1,2],ch1_sc4:[1,3],ch1_sc5:[1,4],ch1_sc6:[1,5],ch2_sc1:[2,0],ch2_sc2:[2,1],ch2_sc3:[2,2],ch2_sc4:[2,3],ch2_sc5:[2,4],ch2_sc6:[2,5],ch2_sc7:[2,6],ch2_sc8:[2,7],ch3_sc1:[3,0],ch3_sc2:[3,1],ch3_sc3:[3,2],ch3_sc4:[3,3],ch3_sc5:[3,4],ch3_sc6:[3,5],ch3_sc7:[3,6],ch3_sc8:[3,7],ch3_sc9:[3,8],ch4_sc1:[4,0],ch4_sc2:[4,1],ch4_sc3:[4,2],ch4_sc4:[4,3],ch4_sc5:[4,4],ch4_sc6:[4,5],ch4_sc7:[4,6],ch4_sc8:[4,7],ch5_sc1:[5,0],ch5_sc2:[5,1],ch5_sc3:[5,2],ch5_sc4:[5,3],ch5_sc5:[5,4],ch5_sc6:[5,5]}
+const grid=document.getElementById('galleryGrid')
+let currentIdx=0
+let unlockedIndices=[]
+function normalize(src){return src.replace(/^\.\.\//,'../')}
+function pathUnlocked(img){const unlocked=Storage.get('unlocked_illustrations',[]).map(normalize);return unlocked.includes(img.src)}
+function progressUnlocked(img){if(localStorage.getItem('sf_current_chapter')===null&&localStorage.getItem('sf_current_scene')===null)return false;const currentChapter=Number(Storage.get('current_chapter',1));const currentScene=Number(Storage.get('current_scene',0));const target=sceneOrder[img.scene];if(!target)return false;return currentChapter>target[0]||(currentChapter===target[0]&&currentScene>=target[1])}
+function isUnlocked(img){return pathUnlocked(img)||progressUnlocked(img)}
+function renderGallery(){unlockedIndices=[];const html=illustrations.map((img,i)=>{const unlocked=isUnlocked(img);if(unlocked)unlockedIndices.push(i);const index=String(i+1).padStart(2,'0');return '<article class="illust-card '+(unlocked?'unlocked':'locked')+'" data-index="'+i+'" aria-label="'+(unlocked?img.caption:'待解锁插图 '+index)+'"><div class="illust-frame">'+(unlocked?'<img class="illust-img" src="'+img.src+'" alt="'+img.caption+'" loading="lazy">':'<div class="locked-plate"><div class="lock-mark"><div class="lock-index">'+index+'</div><div class="lock-title">待解锁</div><div class="lock-hint">'+img.hint+'</div></div></div>')+'</div><div class="illust-caption"><div class="illust-chapter">'+img.chapter+'</div>'+(unlocked?img.caption:'继续游玩以解锁这份影像档案')+'</div></article>'}).join('');grid.innerHTML=html;document.getElementById('unlockCount').textContent=unlockedIndices.length+' / '+illustrations.length;document.getElementById('unlockFill').style.width=(unlockedIndices.length/illustrations.length*100)+'%';document.querySelectorAll('.illust-card.unlocked').forEach(card=>card.addEventListener('click',()=>{currentIdx=Number(card.dataset.index);openLightbox()}))}
+function openLightbox(){if(!unlockedIndices.includes(currentIdx))return;const img=illustrations[currentIdx];document.getElementById('lightboxImg').src=img.src;document.getElementById('lightboxImg').alt=img.caption;document.getElementById('lightboxCaption').textContent='['+img.chapter+'] '+img.caption;document.getElementById('lightbox').classList.add('active')}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('active')}
+function moveUnlocked(step){if(!unlockedIndices.length)return;const pos=unlockedIndices.indexOf(currentIdx);const nextPos=pos<0?0:(pos+step+unlockedIndices.length)%unlockedIndices.length;currentIdx=unlockedIndices[nextPos];openLightbox()}
+document.getElementById('lbClose').addEventListener('click',closeLightbox)
+document.getElementById('lbPrev').addEventListener('click',e=>{e.stopPropagation();moveUnlocked(-1)})
+document.getElementById('lbNext').addEventListener('click',e=>{e.stopPropagation();moveUnlocked(1)})
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox')closeLightbox()})
+document.addEventListener('keydown',e=>{if(!document.getElementById('lightbox').classList.contains('active'))return;if(e.key==='Escape')closeLightbox();if(e.key==='ArrowLeft')moveUnlocked(-1);if(e.key==='ArrowRight')moveUnlocked(1)})
+renderGallery()
+</script>
+</body>
+</html>

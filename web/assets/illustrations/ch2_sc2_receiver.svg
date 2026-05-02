@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Radio receiver eye tube">
+  <defs>
+    <radialGradient id="eye" cx=".5" cy=".43" r=".34">
+      <stop offset="0" stop-color="#00f5ff" stop-opacity=".95"/>
+      <stop offset=".28" stop-color="#00d9e8" stop-opacity=".36"/>
+      <stop offset="1" stop-color="#00d9e8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="brass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4e4bc"/>
+      <stop offset=".45" stop-color="#d4af37"/>
+      <stop offset="1" stop-color="#6f511c"/>
+    </linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="7"/></filter>
+  </defs>
+  <rect width="1280" height="720" fill="#0d0a07"/>
+  <rect x="120" y="120" width="1040" height="480" rx="8" fill="#17100a" stroke="#8f6f1e" stroke-width="4"/>
+  <rect x="158" y="160" width="964" height="400" fill="#100b08" stroke="#3d2b1f"/>
+  <circle cx="640" cy="320" r="210" fill="url(#eye)" filter="url(#soft)"/>
+  <circle cx="640" cy="320" r="145" fill="#071112" stroke="#00d9e8" stroke-opacity=".55" stroke-width="3"/>
+  <path d="M505 320c62-72 208-72 270 0-64 64-206 64-270 0z" fill="#00d9e8" opacity=".26"/>
+  <path d="M520 320h240M640 190v260" stroke="#00f5ff" stroke-opacity=".55" stroke-width="2"/>
+  <g stroke="#d4af37" stroke-width="3" opacity=".8">
+    <path d="M260 470h760"/>
+    <path d="M300 470v-38M378 470v-24M456 470v-38M534 470v-24M612 470v-38M690 470v-24M768 470v-38M846 470v-24M924 470v-38M1002 470v-24"/>
+  </g>
+  <text x="510" y="520" fill="#d4af37" font-family="JetBrains Mono, monospace" font-size="34" letter-spacing="8">7830Hz</text>
+  <circle cx="280" cy="285" r="58" fill="url(#brass)" opacity=".9"/>
+  <circle cx="1000" cy="285" r="58" fill="url(#brass)" opacity=".9"/>
+  <circle cx="280" cy="285" r="28" fill="#0d0a07"/>
+  <circle cx="1000" cy="285" r="28" fill="#0d0a07"/>
+  <path d="M210 210c118-42 220-58 348-52M725 158c132-4 230 12 345 58" stroke="#c4a77d" stroke-opacity=".26" stroke-width="2" fill="none"/>
+</svg>

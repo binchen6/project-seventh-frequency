@@ -1,0 +1,33 @@
+# Dependencies and package-manager noise
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+out/
+web/out/
+target/
+build/
+
+# IDE and OS files
+.idea/
+web/.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local runtime state
+*.log
+*.tmp
+*.temp
+.env
+.env.*
+
+# Generated local caches
+.cache/
+__pycache__/
+*.pyc

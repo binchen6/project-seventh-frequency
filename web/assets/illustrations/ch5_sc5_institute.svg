@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="INSTITUTE">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0908"/>
+      <stop offset=".52" stop-color="#151310"/>
+      <stop offset="1" stop-color="#24180f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".46" r=".55">
+      <stop offset="0" stop-color="#d7b46a" stop-opacity=".34"/>
+      <stop offset=".45" stop-color="#d7b46a" stop-opacity=".09"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="10"/></filter>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="28" y="28" width="1224" height="664" rx="6" fill="none" stroke="#d7b46a" stroke-opacity=".55" stroke-width="3"/>
+  <rect x="52" y="52" width="1176" height="616" rx="4" fill="none" stroke="#35d6c8" stroke-opacity=".14" stroke-width="2"/>
+  <path d="M84 604H1196M84 116H1196" stroke="#d7b46a" stroke-opacity=".22" stroke-width="2"/>
+  <circle cx="640" cy="350" r="320" fill="url(#glow)"/>
+  <g opacity=".26" stroke="#d7b46a" stroke-width="1.4">
+    <path d="M80 92V628"/><path d="M146 92V628"/><path d="M212 92V628"/><path d="M278 92V628"/><path d="M344 92V628"/><path d="M410 92V628"/><path d="M476 92V628"/><path d="M542 92V628"/><path d="M608 92V628"/><path d="M674 92V628"/><path d="M740 92V628"/><path d="M806 92V628"/><path d="M872 92V628"/><path d="M938 92V628"/><path d="M1004 92V628"/><path d="M1070 92V628"/><path d="M1136 92V628"/><path d="M1202 92V628"/>
+  </g>
+  <g transform="translate(238 120)"><path d="M110 432V176l300-104 300 104v256" fill="#19130f" stroke="#d7b46a" stroke-width="7"/><rect x="260" y="230" width="300" height="154" fill="#f2dfad" opacity=".18" stroke="#d7b46a" stroke-width="5"/><path d="M300 278h220M300 326h220" stroke="#8fe6df" stroke-width="8"/><circle cx="410" cy="160" r="34" fill="#d7b46a" opacity=".7"/><path d="M160 432h700" stroke="#d7b46a" stroke-width="8"/></g>
+  <g font-family="Cinzel, Georgia, serif" text-anchor="middle">
+    <text x="640" y="94" fill="#f4dfad" font-size="34" letter-spacing="7">INSTITUTE</text>
+    <text x="640" y="636" fill="#8fe6df" font-size="18" letter-spacing="5">SEVENTH FREQUENCY ARCHIVE</text>
+  </g>
+  <rect width="1280" height="720" fill="#000" opacity=".12"/>
+</svg>

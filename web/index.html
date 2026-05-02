@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第七频率 — 视觉小说</title>
+<link rel="stylesheet" href="css/fonts.css">
+<style>
+:root{--sepia-base:#C4A77D;--sepia-dark:#8B7355;--sepia-light:#E8DCC8;--deco-gold:#D4AF37;--deco-gold-light:#F4E4BC;--deco-gold-dark:#996515;--neon-cyan:#00F5FF;--neon-purple:#BF00FF;--bg-dark:#1a1510;--bg-darker:#0f0c09;--font-display:'ZCOOL QingKe','Cinzel','MiSans',serif;--font-title:'Cinzel','ZCOOL QingKe','MiSans',serif;--font-body:'MiSans','Microsoft YaHei','PingFang SC','Noto Sans CJK SC',sans-serif;--font-ui:'MiSans','Microsoft YaHei','PingFang SC',sans-serif;--font-mono:'JetBrains Mono','Consolas','Courier New',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-body);background:var(--bg-darker);color:var(--sepia-light);min-height:100vh;overflow-x:hidden}
+.deco-bg{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.06;background-image:linear-gradient(45deg,transparent 48%,var(--deco-gold) 49%,var(--deco-gold) 51%,transparent 52%),linear-gradient(-45deg,transparent 48%,var(--deco-gold) 49%,var(--deco-gold) 51%,transparent 52%);background-size:80px 80px}
+.deco-border-top,.deco-border-bottom{position:fixed;left:0;width:100%;height:4px;background:linear-gradient(90deg,transparent,var(--deco-gold),var(--deco-gold-light),var(--deco-gold),transparent);z-index:100}
+.deco-border-top{top:0}.deco-border-bottom{bottom:0}
+.title-section{position:relative;z-index:10;text-align:center;padding:60px 20px 40px}
+.main-title{font-family:var(--font-display);font-size:clamp(2.5rem,8vw,5rem);font-weight:400;color:var(--deco-gold);letter-spacing:.15em;text-shadow:0 0 20px rgba(212,175,55,.3);position:relative;display:inline-block}
+.main-title::before,.main-title::after{content:'第七频率';position:absolute;top:0;left:0;width:100%;height:100%;opacity:0}
+.glitch-active .main-title::before{animation:glitch-1 .3s ease-out;color:var(--neon-cyan);left:2px;opacity:.8}
+.glitch-active .main-title::after{animation:glitch-2 .3s ease-out;color:var(--neon-purple);left:-2px;opacity:.8}
+@keyframes glitch-1{0%,100%{clip-path:inset(0 0 0 0);opacity:0}20%{clip-path:inset(20% 0 60% 0);opacity:.8}40%{clip-path:inset(50% 0 30% 0);opacity:.8}60%{clip-path:inset(10% 0 80% 0);opacity:.8}}
+@keyframes glitch-2{0%,100%{clip-path:inset(0 0 0 0);opacity:0}20%{clip-path:inset(60% 0 20% 0);opacity:.8}40%{clip-path:inset(30% 0 50% 0);opacity:.8}60%{clip-path:inset(80% 0 10% 0);opacity:.8}}
+.subtitle{font-family:var(--font-mono);font-size:1rem;color:var(--sepia-base);letter-spacing:.3em;margin-top:12px;opacity:.7}
+.deco-line{width:120px;height:2px;background:linear-gradient(90deg,transparent,var(--deco-gold),transparent);margin:20px auto}
+.deco-corner{position:absolute;width:40px;height:40px;border:2px solid var(--deco-gold);opacity:.4}
+.deco-corner.tl{top:20px;left:20px;border-right:none;border-bottom:none}
+.deco-corner.tr{top:20px;right:20px;border-left:none;border-bottom:none}
+.deco-corner.bl{bottom:20px;left:20px;border-right:none;border-top:none}
+.deco-corner.br{bottom:20px;right:20px;border-left:none;border-top:none}
+.chapters-section{position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:0 20px 40px}
+.section-label{text-align:center;font-family:var(--font-mono);font-size:.9rem;color:var(--deco-gold);letter-spacing:.4em;text-transform:uppercase;margin-bottom:30px}
+.chapters-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.chapter-card{position:relative;background:linear-gradient(135deg,rgba(26,21,16,.9),rgba(15,12,9,.95));border:1px solid var(--sepia-dark);padding:24px 20px;text-align:center;cursor:pointer;transition:all .4s ease;overflow:hidden}
+.chapter-card::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;border:1px solid transparent;transition:border-color .4s ease;pointer-events:none}
+.chapter-card:hover::before{border-color:var(--deco-gold)}
+.chapter-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(212,175,55,.15)}
+.chapter-card.locked{opacity:.45;cursor:not-allowed;filter:grayscale(.6)}
+.chapter-card.locked:hover{transform:none;box-shadow:none}
+.chapter-number{font-family:var(--font-mono);font-size:2.5rem;color:var(--deco-gold);opacity:.6;line-height:1;margin-bottom:8px}
+.chapter-card.locked .chapter-number{color:var(--sepia-dark)}
+.chapter-title{font-size:1.1rem;font-weight:600;color:var(--sepia-light);margin-bottom:6px}
+.chapter-desc{font-size:.8rem;color:var(--sepia-base);opacity:.7;line-height:1.5}
+.chapter-thumb{width:100%;height:100px;object-fit:cover;margin-bottom:12px;border:1px solid var(--sepia-dark);opacity:.8;transition:opacity .3s}
+.chapter-card:hover .chapter-thumb{opacity:1}
+.chapter-card.locked .chapter-thumb{filter:grayscale(1) brightness(.5)}
+.lock-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2rem;color:var(--sepia-dark);z-index:5}
+.main-actions{position:relative;z-index:10;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;padding:20px;max-width:800px;margin:0 auto 40px}
+.deco-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 36px;font-family:var(--font-ui);font-size:1rem;color:var(--sepia-light);background:transparent;border:1px solid var(--sepia-dark);cursor:pointer;letter-spacing:.15em;transition:all .3s ease;text-decoration:none}
+.deco-btn::before,.deco-btn::after{content:'';position:absolute;width:8px;height:8px;border:1px solid var(--deco-gold);transition:all .3s ease;opacity:0}
+.deco-btn::before{top:-4px;left:-4px;border-right:none;border-bottom:none}
+.deco-btn::after{bottom:-4px;right:-4px;border-left:none;border-top:none}
+.deco-btn:hover{color:var(--deco-gold);border-color:var(--deco-gold);background:rgba(212,175,55,.05)}
+.deco-btn:hover::before,.deco-btn:hover::after{opacity:1;width:12px;height:12px}
+.deco-btn.primary{border-color:var(--deco-gold);color:var(--deco-gold)}
+.deco-btn.primary:hover{background:rgba(212,175,55,.1);box-shadow:0 0 20px rgba(212,175,55,.2)}
+.btn-icon{font-size:1.2rem;line-height:1}
+.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,12,9,.92);z-index:200;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal-box{background:linear-gradient(135deg,var(--bg-dark),var(--bg-darker));border:1px solid var(--sepia-dark);padding:36px 40px;max-width:480px;width:90%;position:relative}
+.modal-box::before{content:'';position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:1px solid rgba(212,175,55,.15);pointer-events:none}
+.modal-title{font-size:1.3rem;color:var(--deco-gold);text-align:center;margin-bottom:24px;letter-spacing:.2em}
+.setting-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(139,115,85,.2)}
+.setting-row:last-child{border-bottom:none}
+.setting-label{font-size:.95rem;color:var(--sepia-base)}
+.setting-control{display:flex;align-items:center;gap:12px}
+.toggle-switch{width:44px;height:24px;background:var(--sepia-dark);border-radius:12px;position:relative;cursor:pointer;transition:background .3s}
+.toggle-switch.active{background:var(--deco-gold)}
+.toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;background:var(--sepia-light);border-radius:50%;transition:transform .3s}
+.toggle-switch.active::after{transform:translateX(20px)}
+.modal-close{position:absolute;top:12px;right:16px;font-size:1.5rem;color:var(--sepia-dark);cursor:pointer;background:none;border:none;line-height:1}
+.modal-close:hover{color:var(--deco-gold)}
+.footer-info{position:relative;z-index:10;text-align:center;padding:30px 20px;font-size:.75rem;color:var(--sepia-dark);opacity:.5;letter-spacing:.1em}
+@media(max-width:640px){.main-title{font-size:2.2rem;letter-spacing:.1em}.chapters-grid{grid-template-columns:repeat(2,1fr);gap:12px}.chapter-card{padding:16px 12px}.chapter-thumb{height:70px}.main-actions{gap:10px}.deco-btn{padding:12px 24px;font-size:.9rem}}
+@media(max-width:400px){.chapters-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="deco-bg"></div>
+<div class="deco-border-top"></div>
+<div class="deco-border-bottom"></div>
+<div class="deco-corner tl"></div>
+<div class="deco-corner tr"></div>
+<div class="deco-corner bl"></div>
+<div class="deco-corner br"></div>
+<section class="title-section">
+<h1 class="main-title" id="mainTitle">第七频率</h1>
+<p class="subtitle">SEVENTH FREQUENCY</p>
+<div class="deco-line"></div>
+<p class="subtitle" style="font-size:.85rem;letter-spacing:.15em">1931年上海 · 民国×科幻视觉小说</p>
+</section>
+<div class="main-actions">
+<a href="jsp/game.html?chapter=continue" class="deco-btn primary"><span class="btn-icon">▶</span> 继续游戏</a>
+<button class="deco-btn" id="newGameBtn"><span class="btn-icon">✦</span> 新的开始</button>
+<a href="jsp/gallery.html" class="deco-btn"><span class="btn-icon">◈</span> 插图画廊</a>
+<button class="deco-btn" id="settingsBtn"><span class="btn-icon">⚙</span> 设置</button>
+</div>
+<section class="chapters-section">
+<div class="section-label">— 章节选择 —</div>
+<div class="chapters-grid" id="chaptersGrid"></div>
+</section>
+<div class="modal-overlay" id="settingsModal">
+<div class="modal-box">
+<button class="modal-close" id="modalClose">x</button>
+<h2 class="modal-title">设 置</h2>
+<div class="setting-row"><span class="setting-label">背景音乐</span><div class="setting-control"><div class="toggle-switch active" id="bgmToggle" data-key="bgm"></div></div></div>
+<div class="setting-row"><span class="setting-label">音效</span><div class="setting-control"><div class="toggle-switch active" id="sfxToggle" data-key="sfx"></div></div></div>
+<div class="setting-row"><span class="setting-label">字体大小</span><div class="setting-control"><button class="deco-btn" style="padding:6px 14px;font-size:.8rem" id="fontSmall">小</button><button class="deco-btn" style="padding:6px 14px;font-size:.8rem" id="fontNormal">中</button><button class="deco-btn" style="padding:6px 14px;font-size:.8rem" id="fontLarge">大</button></div></div>
+<div class="setting-row"><span class="setting-label">全屏模式</span><div class="setting-control"><div class="toggle-switch" id="fullscreenToggle" data-key="fullscreen"></div></div></div>
+<div class="setting-row"><span class="setting-label">清除存档</span><div class="setting-control"><button class="deco-btn" style="padding:6px 18px;font-size:.8rem;color:#B22222;border-color:#8B0000" id="clearSaveBtn">清除</button></div></div>
+</div>
+</div>
+<footer class="footer-info">
+Art Deco故障风 · 第七频率 · 1931上海
+</footer>
+<script>
+const chapters=[
+{id:1,title:'亡者归来',desc:'苏州河的溺亡者，舌下的玻璃珠，尸体的低语',thumb:'assets/illustrations/ch1_sc1_morgue.png',locked:false},
+{id:2,title:'唱片的秘密',desc:'改装留声机，声波里的密文，7830赫兹',thumb:'assets/illustrations/ch2_sc5_lab.png',locked:true},
+{id:3,title:'亚美公司的幽灵',desc:'超声波假死，沉睡者计划，地下实验室',thumb:'assets/illustrations/ch3_sc6_fire.png',locked:true},
+{id:4,title:'频率战争',desc:'万国博览会，相消干涉，记忆保险',thumb:'assets/illustrations/ch4_sc3_expo.png',locked:true},
+{id:5,title:'假死真生',desc:'意识共振，最终抉择，弦断或弦和',thumb:'assets/illustrations/ch5_sc2_choice.png',locked:true}
+]
+const Storage={get:(k,def)=>{try{return JSON.parse(localStorage.getItem('sf_'+k))??def}catch(e){return def}},set:(k,v)=>localStorage.setItem('sf_'+k,JSON.stringify(v))}
+function renderChapters(){const grid=document.getElementById('chaptersGrid');const unlocked=Storage.get('unlocked_chapters',[1]);grid.innerHTML=chapters.map(ch=>{const isUnlocked=unlocked.includes(ch.id);return'<div class="chapter-card '+(isUnlocked?'':'locked')+'" data-id="'+ch.id+'" onclick="startChapter('+ch.id+')">'+(isUnlocked?'':'<div class="lock-icon">🔒</div>')+'<div class="chapter-number">0'+ch.id+'</div><img class="chapter-thumb" src="'+ch.thumb+'" alt="'+ch.title+'" onerror="this.style.display=\'none\'"><div class="chapter-title">'+ch.title+'</div><div class="chapter-desc">'+ch.desc+'</div></div>'}).join('')}
+function startChapter(id){const unlocked=Storage.get('unlocked_chapters',[1]);if(!unlocked.includes(id))return;window.location.href='jsp/game.html?chapter='+id}
+function triggerGlitch(){const title=document.getElementById('mainTitle');title.parentElement.classList.add('glitch-active');setTimeout(()=>title.parentElement.classList.remove('glitch-active'),400)}
+setInterval(()=>{if(Math.random()<.25)triggerGlitch()},3000)
+const settingsModal=document.getElementById('settingsModal')
+document.getElementById('settingsBtn').addEventListener('click',()=>settingsModal.classList.add('active'))
+document.getElementById('modalClose').addEventListener('click',()=>settingsModal.classList.remove('active'))
+settingsModal.addEventListener('click',e=>{if(e.target===settingsModal)settingsModal.classList.remove('active')})
+document.querySelectorAll('.toggle-switch').forEach(toggle=>{const key=toggle.dataset.key;const saved=Storage.get('setting_'+key,toggle.classList.contains('active'));toggle.classList.toggle('active',saved);toggle.addEventListener('click',()=>{toggle.classList.toggle('active');Storage.set('setting_'+key,toggle.classList.contains('active'))})})
+function setFontSize(size){document.documentElement.style.fontSize=size==='small'?'14px':size==='large'?'18px':'16px';Storage.set('font_size',size)}
+document.getElementById('fontSmall').addEventListener('click',()=>setFontSize('small'))
+document.getElementById('fontNormal').addEventListener('click',()=>setFontSize('normal'))
+document.getElementById('fontLarge').addEventListener('click',()=>setFontSize('large'))
+setFontSize(Storage.get('font_size','normal'))
+document.getElementById('fullscreenToggle').addEventListener('click',()=>{if(document.fullscreenElement)document.exitFullscreen();else document.documentElement.requestFullscreen()})
+document.getElementById('clearSaveBtn').addEventListener('click',()=>{if(confirm('确定要清除所有存档数据吗？此操作不可恢复。')){for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(key&&key.startsWith('sf_'))localStorage.removeItem(key)}alert('存档已清除');renderChapters()}})
+document.getElementById('newGameBtn').addEventListener('click',()=>{if(confirm('开始新游戏将覆盖当前进度，是否继续？')){Storage.set('current_chapter',1);Storage.set('current_scene',0);Storage.set('params',{INTEL:0,DRAMA:0,ACTION:0,TECH:0,CLUE:0,ZHOU:0});Storage.set('affection',{lin_ruolan:30,chen_zixuan:30,gu_laosan:30,xiao_cui:30,bai_jinshu:30});Storage.set('flags',{});Storage.set('history',[]);Storage.set('unlocked_chapters',[1]);window.location.href='jsp/game.html?chapter=1'}})
+renderChapters()
+</script>
+</body>
+</html>

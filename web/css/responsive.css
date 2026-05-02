@@ -1,0 +1,839 @@
+/* ═══════════════════════════════════════════════════════════════
+   《第七频率》Art Deco故障风 — 响应式适配
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 断点定义 ── */
+/* 桌面横屏: ≥1200px */
+/* 平板: 768px - 1199px */
+/* 手机横屏: 480px - 767px */
+/* 手机竖屏: <480px */
+
+/* ═══════════════════════════════════════════
+   1. 桌面横屏 (默认, ≥1200px)
+   ═══════════════════════════════════════════ */
+
+@media (min-width: 1200px) {
+  .page-wrapper {
+    padding: var(--space-8);
+  }
+
+  .title-display {
+    font-size: var(--text-5xl);
+  }
+
+  .chapter-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .save-slot-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .dialogue-bubble {
+    max-width: 70%;
+  }
+
+  .choice-container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .settings-panel {
+    max-width: 520px;
+  }
+
+  .param-panel {
+    max-width: 400px;
+  }
+
+  /* 游戏Canvas桌面布局 */
+  .canvas-container {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr;
+  }
+
+  .game-ui-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-4) var(--space-8);
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(10, 10, 15, 0.7) 30%,
+      rgba(10, 10, 15, 0.95) 100%
+    );
+  }
+
+  /* game.jsp 游戏页兼容 */
+  #dialogueLayer {
+    width: 80%;
+    bottom: 90px;
+  }
+  .dialogue-box {
+    padding: 20px 28px;
+  }
+  .dialogue-text {
+    font-size: 1.15rem;
+  }
+  .speaker-name {
+    font-size: 1rem;
+  }
+  #choicesLayer {
+    width: 70%;
+    bottom: 170px;
+  }
+  .choice-btn {
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
+  #controlBar {
+    height: 60px;
+    gap: 8px;
+  }
+  .ctrl-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   2. 平板 (768px - 1199px)
+   ═══════════════════════════════════════════ */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  :root {
+    --text-5xl: 4rem;
+    --text-4xl: 2.8rem;
+    --text-3xl: 2rem;
+    --text-2xl: 1.6rem;
+  }
+
+  .page-wrapper {
+    padding: var(--space-6);
+  }
+
+  .title-display {
+    font-size: var(--text-4xl);
+  }
+
+  .chapter-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .save-slot-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dialogue-bubble {
+    max-width: 80%;
+  }
+
+  .choice-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .settings-panel {
+    max-width: 460px;
+  }
+
+  /* 游戏UI层 */
+  .game-ui-layer {
+    padding: var(--space-4);
+  }
+
+  .control-bar {
+    gap: var(--space-3);
+  }
+
+  .control-btn .btn-label {
+    display: none;
+  }
+
+  /* game.jsp 游戏页兼容 */
+  #dialogueLayer {
+    max-width: 80%;
+  }
+  .dialogue-box {
+    padding: 16px 22px;
+  }
+  .dialogue-text {
+    font-size: 1rem;
+  }
+  .speaker-name {
+    font-size: 0.95rem;
+  }
+  #choicesLayer {
+    max-width: 600px;
+    width: 90%;
+  }
+  .choice-btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+  #controlBar {
+    height: 55px;
+    gap: 6px;
+  }
+  .ctrl-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   3. 手机横屏 (480px - 767px)
+   ═══════════════════════════════════════════ */
+
+@media (min-width: 480px) and (max-width: 767px) {
+  :root {
+    --text-5xl: 3rem;
+    --text-4xl: 2.2rem;
+    --text-3xl: 1.6rem;
+    --text-2xl: 1.3rem;
+    --text-xl: 1.1rem;
+    --text-lg: 1rem;
+  }
+
+  .page-wrapper {
+    padding: var(--space-4);
+  }
+
+  .title-display {
+    font-size: var(--text-3xl);
+  }
+
+  .subtitle {
+    font-size: var(--text-sm);
+    letter-spacing: 0.2em;
+  }
+
+  .chapter-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+    padding: var(--space-2);
+  }
+
+  .chapter-card .card-title {
+    font-size: var(--text-base);
+  }
+
+  .chapter-card .card-desc {
+    font-size: var(--text-xs);
+  }
+
+  .save-slot-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+    padding: var(--space-2);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+    padding: var(--space-2);
+  }
+
+  .dialogue-bubble {
+    max-width: 90%;
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .dialogue-text {
+    font-size: var(--text-base);
+    line-height: 1.6;
+  }
+
+  .dialogue-speaker {
+    font-size: var(--text-xs);
+  }
+
+  .choice-container {
+    padding: var(--space-3);
+    margin: 0 var(--space-2);
+  }
+
+  .choice-button {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+  }
+
+  .settings-panel {
+    padding: var(--space-4);
+    max-width: 100%;
+  }
+
+  .settings-panel .panel-header {
+    font-size: var(--text-xl);
+  }
+
+  .param-gauge .param-name {
+    width: 50px;
+    font-size: 0.65rem;
+  }
+
+  .affection-item .affection-name {
+    font-size: var(--text-xs);
+  }
+
+  /* 控制栏精简 */
+  .control-bar {
+    gap: var(--space-2);
+    padding: var(--space-2);
+  }
+
+  .control-btn {
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .control-btn .btn-label {
+    display: none;
+  }
+
+  .control-btn .btn-icon {
+    font-size: var(--text-lg);
+  }
+
+  /* 模态框全屏 */
+  .modal-box {
+    width: 95%;
+    padding: var(--space-4);
+    max-height: 90vh;
+  }
+
+  .modal-box .modal-title {
+    font-size: var(--text-lg);
+  }
+
+  /* 谜题容器 */
+  .puzzle-container {
+    padding: var(--space-4);
+    width: 95%;
+  }
+
+  .puzzle-container .puzzle-title {
+    font-size: var(--text-xl);
+  }
+
+  /* game.jsp 游戏页兼容 */
+  #dialogueLayer {
+    max-width: 90%;
+    bottom: 120px;
+  }
+  .dialogue-box {
+    padding: 14px 18px;
+  }
+  .dialogue-text {
+    font-size: var(--text-base);
+    line-height: 1.6;
+  }
+  .speaker-name {
+    font-size: var(--text-xs);
+  }
+  #choicesLayer {
+    width: 94%;
+    bottom: 180px;
+  }
+  .choice-btn {
+    padding: 10px 16px;
+    font-size: var(--text-sm);
+  }
+  #controlBar {
+    height: 50px;
+    gap: 4px;
+    padding: 0 8px;
+  }
+  .ctrl-btn {
+    padding: 5px 8px;
+    font-size: 0.7rem;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   4. 手机竖屏 (<480px)
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 479px) {
+  :root {
+    --text-5xl: 2.2rem;
+    --text-4xl: 1.8rem;
+    --text-3xl: 1.4rem;
+    --text-2xl: 1.2rem;
+    --text-xl: 1.05rem;
+    --text-lg: 1rem;
+    --text-base: 0.9rem;
+  }
+
+  html {
+    font-size: 15px;
+  }
+
+  .page-wrapper {
+    padding: var(--space-3);
+  }
+
+  .title-display {
+    font-size: var(--text-2xl);
+    letter-spacing: 0.1em;
+  }
+
+  .subtitle {
+    font-size: var(--text-xs);
+    letter-spacing: 0.15em;
+  }
+
+  /* 章节卡片单列 */
+  .chapter-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    padding: var(--space-2);
+  }
+
+  .chapter-card .card-content {
+    padding: var(--space-3);
+  }
+
+  .chapter-card .card-title {
+    font-size: var(--text-lg);
+  }
+
+  /* 存档槽单列 */
+  .save-slot-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    padding: var(--space-2);
+  }
+
+  .save-slot {
+    padding: var(--space-3);
+  }
+
+  /* 画廊单列 */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    padding: var(--space-2);
+  }
+
+  /* 对话气泡全宽 */
+  .dialogue-bubble {
+    max-width: 95%;
+    padding: var(--space-3) var(--space-4);
+    margin: 0 auto;
+  }
+
+  .dialogue-bubble .bubble-corner {
+    width: 10px;
+    height: 10px;
+  }
+
+  .dialogue-text {
+    font-size: var(--text-base);
+    line-height: 1.6;
+  }
+
+  .dialogue-speaker {
+    font-size: var(--text-xs);
+  }
+
+  /* 选择区 */
+  .choice-container {
+    padding: var(--space-3);
+    margin: 0 var(--space-1);
+    border-radius: var(--radius-sm);
+  }
+
+  .choice-button {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    margin-bottom: var(--space-2);
+  }
+
+  .choice-button .route-tag {
+    display: block;
+    margin-left: 0;
+    margin-top: var(--space-1);
+    width: fit-content;
+  }
+
+  /* 设置面板 */
+  .settings-panel {
+    padding: var(--space-3);
+    border-radius: var(--radius-sm);
+  }
+
+  .settings-panel .panel-header {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .settings-group {
+    margin-bottom: var(--space-4);
+  }
+
+  .setting-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+    padding: var(--space-2) 0;
+  }
+
+  /* 参数仪表 */
+  .param-gauge {
+    gap: var(--space-2);
+  }
+
+  .param-gauge .param-icon {
+    width: 20px;
+    height: 20px;
+    font-size: var(--text-xs);
+  }
+
+  .param-gauge .param-name {
+    width: 44px;
+    font-size: 0.6rem;
+  }
+
+  .param-gauge .param-value {
+    width: 24px;
+    font-size: 0.6rem;
+  }
+
+  /* 好感度条 */
+  .affection-item .affection-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .affection-item .affection-name {
+    font-size: var(--text-xs);
+  }
+
+  /* 控制栏 */
+  .control-bar {
+    gap: var(--space-1);
+    padding: var(--space-2);
+    justify-content: space-around;
+  }
+
+  .control-btn {
+    padding: var(--space-1);
+    min-width: 44px;
+  }
+
+  .control-btn .btn-label {
+    display: none;
+  }
+
+  .control-btn .btn-icon {
+    font-size: var(--text-lg);
+  }
+
+  /* 模态框 */
+  .modal-box {
+    width: 96%;
+    padding: var(--space-3);
+    border-radius: var(--radius-sm);
+  }
+
+  .modal-box .modal-title {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-3);
+  }
+
+  .modal-box .modal-actions {
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+
+  .modal-box .modal-actions .btn {
+    width: 100%;
+  }
+
+  /* 谜题 */
+  .puzzle-container {
+    padding: var(--space-3);
+    width: 96%;
+    border-radius: var(--radius-sm);
+  }
+
+  .puzzle-container .puzzle-title {
+    font-size: var(--text-lg);
+  }
+
+  .puzzle-container .puzzle-desc {
+    font-size: var(--text-sm);
+  }
+
+  .waveform-display {
+    height: 80px;
+  }
+
+  .morse-input .morse-btn {
+    width: 64px;
+    height: 64px;
+    font-size: var(--text-xs);
+  }
+
+  /* 按钮 */
+  .btn {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+  }
+
+  .btn-lg {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-sm);
+  }
+
+  /* Toast */
+  .toast {
+    width: 90%;
+    text-align: center;
+    font-size: var(--text-xs);
+  }
+
+  /* 滚动条更细 */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* game.jsp 游戏页兼容 */
+  #dialogueLayer {
+    max-width: 95%;
+    bottom: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 96%;
+  }
+  .dialogue-box {
+    padding: 12px 16px;
+  }
+  .dialogue-text {
+    font-size: var(--text-base);
+    line-height: 1.6;
+  }
+  .speaker-name {
+    font-size: var(--text-xs);
+  }
+  #choicesLayer {
+    width: 94%;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .choice-btn {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    margin-bottom: var(--space-2);
+  }
+  #controlBar {
+    height: 50px;
+    gap: 4px;
+    padding: var(--space-2);
+    justify-content: space-around;
+  }
+  .ctrl-btn {
+    padding: var(--space-1);
+    min-width: 44px;
+    font-size: var(--text-xs);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   5. 横屏手机特殊处理
+   ═══════════════════════════════════════════ */
+
+@media (max-height: 480px) and (orientation: landscape) {
+  .canvas-container {
+    height: 100vh;
+  }
+
+  .game-ui-layer {
+    padding: var(--space-2) var(--space-4);
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(10, 10, 15, 0.8) 20%,
+      rgba(10, 10, 15, 0.98) 100%
+    );
+  }
+
+  .dialogue-bubble {
+    max-width: 75%;
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .dialogue-text {
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+
+  .choice-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    padding: var(--space-2);
+  }
+
+  .choice-button {
+    flex: 1;
+    min-width: 140px;
+    margin-bottom: 0;
+    font-size: var(--text-xs);
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .control-bar {
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+  }
+
+  .control-btn .btn-label {
+    display: none;
+  }
+
+  /* game.jsp 游戏页兼容 */
+  #dialogueLayer {
+    max-width: 75%;
+    padding: var(--space-2) var(--space-4);
+  }
+  .dialogue-text {
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+  .speaker-name {
+    font-size: var(--text-xs);
+  }
+  #choicesLayer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    padding: var(--space-2);
+    bottom: 120px;
+  }
+  .choice-btn {
+    flex: 1;
+    min-width: 120px;
+    font-size: var(--text-xs);
+    padding: var(--space-2) var(--space-3);
+  }
+  #controlBar {
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    height: 44px;
+  }
+  .ctrl-btn {
+    padding: var(--space-1) var(--space-2);
+    font-size: 0.7rem;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   6. 高DPI屏适配
+   ═══════════════════════════════════════════ */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .noise-bg::before {
+    background-size: 64px 64px;
+  }
+
+  .game-overlay .overlay-grain {
+    background-size: 64px 64px;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   7. 暗色偏好确认
+   ═══════════════════════════════════════════ */
+
+@media (prefers-color-scheme: light) {
+  /* 强制暗色，无视系统偏好 */
+  body {
+    background-color: var(--bg-void);
+    color: var(--text-primary);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   8. 减少动画偏好
+   ═══════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .breathing,
+  .flickering,
+  .anim-breathe,
+  .anim-flicker,
+  .anim-neon-cyan,
+  .anim-neon-purple,
+  .anim-neon-gold,
+  .anim-ripple-gold,
+  .anim-ripple-cyan {
+    animation: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   9. 触控设备优化
+   ═══════════════════════════════════════════ */
+
+@media (pointer: coarse) {
+  .choice-button,
+  .control-btn,
+  .btn,
+  .chapter-card,
+  .save-slot,
+  .gallery-item {
+    min-height: 44px;
+  }
+
+  .range-slider::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+  }
+
+  .toggle-switch {
+    width: 52px;
+    height: 28px;
+  }
+
+  .toggle-switch::after {
+    width: 22px;
+    height: 22px;
+  }
+
+  .toggle-switch.on::after {
+    transform: translateX(24px);
+  }
+}
