@@ -87,14 +87,26 @@
                 "INTEL": 10,
                 "CLUE": 2
               },
-              "nextScene": "ch1_sc2"
+              "nextScene": "ch1_sc2",
+              "feedback": {
+                "title": "全面检查完毕",
+                "body": "沈默从头到脚重新检查了一遍。每一处微小的异常都被记录在案，细节不会说谎。",
+                "detail": "推理+10 / 线索+2",
+                "tone": "intel"
+              }
             },
             {
               "text": "「报告上写常规溺水就够了。多一事不如少一事。」（简要记录）",
               "effects": {
                 "DRAMA": 10
               },
-              "nextScene": "ch1_sc2"
+              "nextScene": "ch1_sc2",
+              "feedback": {
+                "title": "草草结案",
+                "body": "报告上写着常规溺水，但沈默心里清楚，有些东西被刻意忽略了。",
+                "detail": "人心+10",
+                "tone": "drama"
+              }
             }
           ]
         },
@@ -5767,7 +5779,13 @@
                 "TECH": 5,
                 "INTEL": 5
               },
-              "nextScene": "ch5_sc2"
+              "nextScene": "ch5_sc2",
+              "feedback": {
+                "title": "波形分离",
+                "body": "两层脑电波纠缠在一起，但在机械脉冲的间隙，正常波形隐约可见——若雪还在下面。",
+                "detail": "技术+5 / 推理+5",
+                "tone": "tech"
+              }
             },
             {
               "text": "「唱片的断点位置能告诉我们叠加是从什么时候开始的。」（检查物理证据）",
@@ -5775,14 +5793,26 @@
                 "INTEL": 5,
                 "CLUE": 1
               },
-              "nextScene": "ch5_sc2"
+              "nextScene": "ch5_sc2",
+              "feedback": {
+                "title": "叠加起点",
+                "body": "唱片断点的位置揭示了叠加开始的时间。二十年前的第一道刻痕，是陶启明亲手刻的。",
+                "detail": "推理+5 / 线索+1",
+                "tone": "intel"
+              }
             },
             {
               "text": "「陶启明，你说覆盖了二十年——那她这二十年里，有没有听过自己的声音？」（观察陶启明的反应）",
               "effects": {
                 "DRAMA": 10
               },
-              "nextScene": "ch5_sc2"
+              "nextScene": "ch5_sc2",
+              "feedback": {
+                "title": "二十年的沉默",
+                "body": "陶启明没有回答。但他的手在发抖。二十年来他一直以为自己在拯救女儿，实际上是在覆盖她。",
+                "detail": "人心+10",
+                "tone": "drama"
+              }
             }
           ]
         },
