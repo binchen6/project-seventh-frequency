@@ -222,7 +222,7 @@
             {
               "speaker": null,
               "text": "清晨的巡捕房还没完全醒，走廊里只有擦地水和廉价烟草的味道。白锦书的门半掩着，里面的台灯亮了一夜。",
-              "illustration": "assets/illustrations/ch1_sc3_shikumen.svg"
+              "illustration": "assets/illustrations/ch1_sc3_shikumen.png"
             },
             {
               "text": "沈先生，这么晚了还在验尸房加班？我倒是好奇，是哪具尸体值得我们的沈先生半夜跑来汇报。",
@@ -711,7 +711,7 @@
             {
               "speaker": "沈默",
               "text": "顾老三说您听见过亚美公司的货。",
-              "illustration": "assets/illustrations/ch1_sc6_suzhou_dawn.svg"
+              "illustration": "assets/illustrations/ch1_sc6_suzhou_dawn.png"
             },
             {
               "speaker": "周老板",
@@ -1033,7 +1033,7 @@
             {
               "speaker": null,
               "text": "那只接收器像一颗被拆开的心脏，线圈和真空管一起发热。7830Hz的细线在示波器上跳动，像有人在黑暗里敲门。",
-              "illustration": "assets/illustrations/ch2_sc2_receiver.svg"
+              "illustration": "assets/illustrations/ch2_sc2_receiver.png"
             },
             {
               "text": "陈子轩坐在一堆电子零件中间，手里握着一支电烙铁，正在焊接一个电路板。他的圆脸上沾着一点松香，白衬衫的袖子上卷，露出瘦削的手臂。",
@@ -2186,7 +2186,7 @@
             {
               "speaker": null,
               "text": "陶启明亲自给沈默倒茶。杯沿薄得像一片骨，茶水里浮着两根舒展不开的叶梗。",
-              "illustration": "assets/illustrations/ch2_sc8_tao_invitation.svg"
+              "illustration": "assets/illustrations/ch2_sc8_tao_invitation.png"
             },
             {
               "speaker": "陶启明",
@@ -4005,7 +4005,7 @@
             {
               "speaker": null,
               "text": "陈子轩调低功率。小翠把账本摊开，顾老三把仓库门关严，林若兰按住表盘。沈默对着话筒，一字一句地发出那段几乎听不见的消息。",
-              "illustration": "assets/illustrations/ch3_sc9_silent_registry.svg"
+              "illustration": "assets/illustrations/ch3_sc9_silent_registry.png"
             },
             {
               "speaker": "沈默",
@@ -4744,7 +4744,7 @@
             {
               "speaker": null,
               "text": "机房外廊贴着白瓷砖，瓷缝里积着灰。墙那边传来低频嗡鸣，像整座展馆都在屏住呼吸。",
-              "illustration": "assets/illustrations/ch4_sc4_transmitter.svg"
+              "illustration": "assets/illustrations/ch4_sc4_transmitter.png"
             },
             {
               "text": "机器旁边站着三个人：陶启明、和两个穿白大褂的技术员。陶启明正在检查仪表，不时在笔记本上记录什么。",
@@ -5661,7 +5661,7 @@
             {
               "speaker": null,
               "text": "隔离舱里没有哭声，只有仪表针细细颤动。白若雪的名字贴在玻璃下角，墨迹被消毒水泡淡，像快要从世界上褪掉。",
-              "illustration": "assets/illustrations/ch5_sc1_false_death.svg"
+              "illustration": "assets/illustrations/ch5_sc1_false_death.png"
             },
             {
               "text": "陶启明站在控制台前，手指悬在按钮上。他没看沈默，眼睛只盯着若雪。",
@@ -6591,7 +6591,7 @@
             {
               "speaker": "沈默",
               "text": "后悔吗？",
-              "illustration": "assets/illustrations/ch5_sc5_institute.svg"
+              "illustration": "assets/illustrations/ch5_sc5_institute.png"
             },
             {
               "speaker": "林若兰",
