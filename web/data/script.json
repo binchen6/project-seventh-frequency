@@ -24,6 +24,10 @@
               "speaker": null
             },
             {
+              "text": "窗外的雨声混着远处隐约的汽笛。一个月前，日本人占了沈阳。上海的报纸每天都在喊「抗日救国」，可苏州河里照样有人溺死，验尸房里照样摆满了无名尸。",
+              "speaker": null
+            },
+            {
               "text": "沈默穿着灰布长衫，袖子卷到手肘处。他站在解剖台前，面前是一具刚从苏州河打捞上来的男尸。",
               "speaker": null
             },
@@ -66,6 +70,14 @@
             {
               "speaker": null,
               "text": "玻璃珠在托盘里滚动了一格，停在灯影最亮的地方。沈默把它夹起时，镊子尖轻轻一震，仿佛珠子里藏着一根极细的弦。"
+            },
+            {
+              "text": "沈默盯着那颗玻璃珠，忽然想起小时候听过的一种声音。他父亲——沈怀瑾——曾在法租界开过一家无线电修理铺。每到深夜，铺子里就会传出一种极低频的嗡嗡声，像有人在黑暗里持续地敲一面看不见的鼓。",
+              "speaker": null
+            },
+            {
+              "text": "那种声音后来成了沈默对『父亲』这个词最确切的记忆。比面孔清晰，比言语持久。",
+              "speaker": null
             }
           ],
           "choices": [
@@ -326,7 +338,7 @@
             {
               "speaker": "顾老三",
               "text": "沈先生，您这张脸，一看就是昨晚没睡。验尸房又闹鬼了？",
-              "illustration": "assets/illustrations/minimax/ch1_sc4_dock_tip.png"
+              "illustration": "assets/illustrations/ch1_sc4_dock_tip.png"
             },
             {
               "speaker": "沈默",
@@ -350,7 +362,7 @@
             },
             {
               "speaker": "顾老三",
-              "text": "去了法租界。坐的是亚美公司的车。车牌我没看清，但车尾有一道刮痕，像被铁链抽过。"
+              "text": "去了法租界。坐的是亚美公司的车。车牌我没看清，但车尾有一道刮痕，像被铁链抽过。 亚美公司是苏氏七姐弟创办的，民国十三年就在江西路开了厂，自己造收音机、办广播电台，呼号XGAH。上海滩搞无线电的，没有人不知道亚美。"
             },
             {
               "speaker": null,
@@ -502,7 +514,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "七分三厘。不是上海的规格，是北洋的计量标准。亚美公司三年前在天津开过实验室——这根管子，是从那里来的。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "speaker": null,
@@ -523,7 +535,7 @@
             {
               "speaker": null,
               "text": "停尸柜里传来细响。沈默拉开柜门，冷气扑到脸上。里面没有尸体，只有一只湿纸袋。",
-              "illustration": "assets/illustrations/minimax/ch1_sc5_missing_body.png"
+              "illustration": "assets/illustrations/ch1_sc5_missing_body.png"
             },
             {
               "speaker": null,
@@ -532,6 +544,14 @@
             {
               "speaker": "沈默",
               "text": "陶启明。"
+            },
+            {
+              "text": "那个编号格式让他心头一紧。父亲铺子里的旧零件盒上也写过类似的编号——R代表『共振』，后面的数字是实验批次。",
+              "speaker": null
+            },
+            {
+              "text": "沈怀瑾死前最后一件没修好的机器，盒子上就写着R-007。",
+              "speaker": null
             },
             {
               "speaker": null,
@@ -559,7 +579,7 @@
             },
             {
               "speaker": null,
-              "text": "门外传来脚步声。两个巡捕经过，谈笑着说晚上去百乐门。沈默站在阴影里，没有出声。"
+              "text": "门外传来脚步声。两个巡捕经过，谈笑着说晚上去大华饭店。沈默站在阴影里，没有出声。"
             },
             {
               "speaker": null,
@@ -668,7 +688,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "玻璃珠里藏着第二层频率。不是死者在说话，是死者的记忆在回放。有人把记忆封进了这颗珠子，像把信塞进瓶子。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "speaker": null,
@@ -851,7 +871,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "二十年前造桥的人，和今天造频率舱的人，手上都有同一批德国图纸。周老板没说完的那半句话，死者的阁楼会替他说完。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "text": "沈默根据巡捕房的身份登记簿，找到了死者的住处——霞飞路附近一条逼仄的石库门弄堂。弄堂两侧是连绵的黑漆厚木门，门楣上雕刻着中西合璧的山花楣饰，有些已经斑驳脱落。",
@@ -1055,12 +1075,49 @@
               "speaker": null
             },
             {
-              "text": "「10月24日。万国博览会。主展馆地下。7830 Hz。全部唤醒。」",
+              "text": "「10月24日。亚美无线电科技展。主展馆地下。7830 Hz。全部唤醒。」",
               "speaker": null
             },
             {
               "text": "陈子轩和沈默对视一眼。两人的表情都变了。",
               "speaker": null
+            },
+            {
+              "text": "沈默盯着屏幕上的数字，忽然说：",
+              "speaker": null
+            },
+            {
+              "text": "『子轩，你记不记得，老式矿石收音机的谐振频率？』",
+              "speaker": "沈默",
+              "expression": "thinking"
+            },
+            {
+              "text": "陈子轩愣了一下：『大概在800到1000千赫兹之间吧。怎么了？』",
+              "speaker": "陈子轩",
+              "expression": "surprised"
+            },
+            {
+              "text": "沈默没有解释。他想起父亲铺子里那台最古老的矿石收音机——玻璃罩里的检波器、铜线圈、还有那只永远调不准的谐振电容。",
+              "speaker": null
+            },
+            {
+              "text": "陈子轩从抽屉里抽出一本泛黄的英文期刊，指着一段被红笔圈出的文字。",
+              "speaker": null
+            },
+            {
+              "text": "「特斯拉在1889年的实验笔记里提到过一种『驻波地球共振』——他说地球本身就是一个巨大的共振腔，频率在7到8赫兹之间。比舒曼的理论预言早了六十三年。」",
+              "speaker": "陈子轩",
+              "expression": "thinking"
+            },
+            {
+              "text": "「7830赫兹，恰好是7.83赫兹的整数倍。这不是巧合——陶启明在利用地球本身的电磁场作为放大器。」",
+              "speaker": "陈子轩",
+              "expression": "sad"
+            },
+            {
+              "text": "「如果特斯拉的笔记是真的，那陶启明不是在发明什么新东西。他是在重启一个被遗忘了一百年的实验。」",
+              "speaker": "林若兰",
+              "expression": "neutral"
             },
             {
               "text": "「全部唤醒」？这是什么意思？谁要唤醒谁？",
@@ -1095,7 +1152,7 @@
             },
             {
               "speaker": "沈默",
-              "text": "所以他们选万国博览会。那里有最多的喇叭，也有最多相信奇迹的人。"
+              "text": "所以他们选亚美无线电科技展。那里有最多的喇叭，也有最多相信奇迹的人。"
             },
             {
               "speaker": null,
@@ -1121,7 +1178,7 @@
             },
             {
               "id": "ch2_c2_b",
-              "text": "「去百乐门找小翠，打听死者生前的行踪。」",
+              "text": "「去大华饭店找小翠，打听死者生前的行踪。」",
               "effects": {
                 "DRAMA": 10,
                 "ACTION": 5
@@ -1133,7 +1190,7 @@
                 "detail": "人心+10 / 行动+5",
                 "tone": "action"
               },
-              "transition": "百乐门的后台狭窄而嘈杂。小翠把纸条塞进他手心时，指尖冰凉——那不是夜寒，是怕。"
+              "transition": "大华饭店的后台狭窄而嘈杂。小翠把纸条塞进他手心时，指尖冰凉——那不是夜寒，是怕。"
             },
             {
               "id": "ch2_c2_c",
@@ -1192,7 +1249,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "脉冲矩阵重排之后，7830Hz不再是数字，而是一组空间坐标。它指向法租界外环的一栋灰色建筑——亚美公司的核心实验室就在那里。",
-              "illustration": "assets/illustrations/intel_reasoning.png"
+              "illustration": "assets/ui/intel_reasoning.png"
             },
             {
               "text": "无论是陈子轩译出的频率，还是白锦书语焉不详的反应，答案都指向亚美公司三楼工程部。沈默把报告压在抽屉最底层，换了一个不惊动人的借口。",
@@ -1372,13 +1429,13 @@
                 "detail": "推理+10 / 若兰-5 / 人心+5",
                 "tone": "drama"
               },
-              "transition": "线索开始拼接。沈默在脑海里把碎片排成一条线，发现终点指向一个他从没想过的地方——百乐门的小翠。"
+              "transition": "线索开始拼接。沈默在脑海里把碎片排成一条线，发现终点指向一个他从没想过的地方——大华饭店的小翠。"
             }
           ]
         },
         {
           "id": "ch2_sc4",
-          "title": "百乐门的小翠",
+          "title": "大华饭店的小翠",
           "time": "10月17日 21:00",
           "weather": "",
           "location": "百乐门舞厅",
@@ -1386,13 +1443,13 @@
           "bgm": "bgm_ambient.mp3",
           "dialogues": [
             {
-              "text": "百乐门舞厅位于愚园路，是上海滩最负盛名的娱乐场所。霓虹灯招牌在夜空中闪烁，爵士乐从门缝里溢出来，混着香水、烟草和香槟的气味。",
+              "text": "大华饭店舞厅位于静安寺路，是上海滩最负盛名的娱乐场所。霓虹灯招牌在夜空中闪烁，爵士乐从门缝里溢出来，混着香水、烟草和香槟的气味。",
               "speaker": null
             },
             {
               "text": "沈默坐在舞厅角落的一张小桌前，面前放着一杯没动的威士忌。",
               "speaker": null,
-              "illustration": "assets/illustrations/ch2_sc4_paramount.png"
+              "illustration": "assets/illustrations/ch2_sc4_majestic.png"
             },
             {
               "text": "他穿着深色西装——为了混进这种场合，他不得不换下那身灰布长衫。",
@@ -1407,7 +1464,7 @@
               "speaker": null
             },
             {
-              "text": "沈先生，法租界的验尸官跑到百乐门来，不是为了跳舞吧？还是说……您终于想通了，要享受一下人生？",
+              "text": "沈先生，法租界的验尸官跑到大华饭店来，不是为了跳舞吧？还是说……您终于想通了，要享受一下人生？",
               "speaker": "小翠",
               "expression": "smile"
             },
@@ -1481,7 +1538,7 @@
             },
             {
               "speaker": "小翠",
-              "text": "来百乐门的人都说自己清醒，其实一个个都在梦里。梦发财，梦出国，梦有人爱他。只有快死的人，眼睛才真正醒着。"
+              "text": "来大华饭店的人都说自己清醒，其实一个个都在梦里。梦发财，梦出国，梦有人爱他。只有快死的人，眼睛才真正醒着。"
             },
             {
               "speaker": "沈默",
@@ -1512,7 +1569,7 @@
                 "detail": "人心+5 / 线索+1 / 小翠+10",
                 "tone": "xiao_cui"
               },
-              "transition": "百乐门的后台狭窄而嘈杂。小翠把纸条塞进他手心时，指尖冰凉——那不是夜寒，是怕。"
+              "transition": "大华饭店的后台狭窄而嘈杂。小翠把纸条塞进他手心时，指尖冰凉——那不是夜寒，是怕。"
             },
             {
               "id": "ch2_c4_b",
@@ -1727,7 +1784,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "7830Hz不只是信号，它有物理力量。接收腔不稳时，它能灼伤神经。那些人不是自愿沉睡的——是被频率强行关闭的。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "speaker": null,
@@ -1740,7 +1797,7 @@
             {
               "speaker": null,
               "text": "状态栏里最多的两个字是：沉睡。",
-              "illustration": "assets/illustrations/minimax/ch2_sc6_sleepers_registry.png"
+              "illustration": "assets/illustrations/ch2_sc6_sleepers_registry.png"
             },
             {
               "speaker": "陶启明",
@@ -1796,7 +1853,7 @@
             },
             {
               "speaker": null,
-              "text": "沈默忽然明白，万国博览会不是展示地点。那是观众席。"
+              "text": "沈默忽然明白，亚美无线电科技展不是展示地点。那是观众席。"
             },
             {
               "speaker": null,
@@ -1910,7 +1967,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "名册上的每个编号都是一条命。陶启明想用他们的意识做燃料，把若雪从死亡里拉回来。可她如果知道，绝不会答应。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "speaker": null,
@@ -1921,9 +1978,31 @@
               "text": "陶启明隔着玻璃指给沈默看。白若雪躺在舱内，脸色苍白，胸口几乎没有起伏。"
             },
             {
+              "text": "沈默忽然想起一件事。三年前，他在法租界的一家诊所门口见过这个女孩。她穿着学生装，手里拿着一本《无线电学原理》，站在梧桐树下等电车。",
+              "speaker": null
+            },
+            {
+              "text": "那时他不知道她的名字。只知道她的刘海被风吹乱，她用手背去撩，动作里有一种不属于这个时代的从容。",
+              "speaker": null
+            },
+            {
+              "text": "「你懂无线电？」沈默问。",
+              "speaker": "沈默",
+              "expression": "thinking"
+            },
+            {
+              "text": "「不懂。」她笑了一下，「但总有一天要懂的。上海需要更多懂频率的人，而不是只会数钱的人。」",
+              "speaker": "白若雪",
+              "expression": "happy"
+            },
+            {
+              "text": "那是他唯一一次听见她说话。她的声音很轻，但每个字都落在实处，像小石子投入深井，回声很长。",
+              "speaker": null
+            },
+            {
               "speaker": "陶启明",
               "text": "三年前，她死过一次。医学宣布结束，我不接受。",
-              "illustration": "assets/illustrations/minimax/ch2_sc7_glass_heartbeat.png"
+              "illustration": "assets/illustrations/ch2_sc7_glass_heartbeat.png"
             },
             {
               "speaker": "沈默",
@@ -2089,7 +2168,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "她的手指不是在抽搐，是在发报。摩尔斯码译出来只有三个字：『救他们』。若雪的意识还在，她在替那些沉睡者求救。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "speaker": null,
@@ -2201,7 +2280,7 @@
                 "detail": "推理+10 / 人心+5",
                 "tone": "drama"
               },
-              "transition": "博览会的人潮像一条发光的河。沈默逆着人流前进，耳边是法语、英语和上海话的混响，像一台调不准的收音机。"
+              "transition": "展览会的人潮像一条发光的河。沈默逆着人流前进，耳边是法语、英语和上海话的混响，像一台调不准的收音机。"
             },
             {
               "id": "ch2_c8_b",
@@ -2285,7 +2364,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "三短一长的回敲收到了回应。信号源不在实验室外面，就在地下室——有人在下面等着我。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "text": "沈默的手还悬在旋钮上方。灯光重新亮起，白锦书和灰西装男人站在门口，像两尊门神。",
@@ -2295,6 +2374,47 @@
               "text": "沈先生，自我介绍一下。我是陶启明，亚美公司的技术顾问。您半夜闯入我们的实验室，按照法租界的法律，我可以立刻报警——当然，报警的话，您的前途就毁了。",
               "speaker": "陶启明",
               "expression": "smile"
+            },
+            {
+              "text": "沈默在准备逃跑时，从白锦书的抽屉里发现一本日记。封面上写着：『若雪，民国十八年』。",
+              "speaker": null
+            },
+            {
+              "text": "最后一页只有一行字：『今天陶教授给我看了一台机器。他说，人死后意识不会消失，只是换了一个频率继续存在。我不知道该不该相信。但我相信他眼里的光——那是真的。』",
+              "speaker": null
+            },
+            {
+              "text": "字迹到这里断了。纸页上有几滴干涸的水渍，不知是泪还是雨水。",
+              "speaker": null
+            },
+            {
+              "text": "沈默合上日记。一个相信「光」的女孩，现在躺在玻璃舱里，被人当作频率的容器。",
+              "speaker": null
+            },
+            {
+              "text": "收音机里传来一条国际新闻：「美国发明家托马斯·爱迪生于10月18日在新泽西州逝世，享年84岁。」",
+              "speaker": null
+            },
+            {
+              "text": "沈默关掉收音机。验尸房里重新安静下来，只有福尔马林的滴答声。",
+              "speaker": null
+            },
+            {
+              "text": "爱迪生。发明了留声机、电灯、电影摄影机的人。也是……最早提出「生命可以被电流记录」的人。",
+              "speaker": "沈默",
+              "expression": "thinking"
+            },
+            {
+              "text": "他想起在胶片上看到的那个女人——太阳穴贴着电极，身后站着陶启明。如果爱迪生的理论是对的，那么「第七频率」也许不是什么新发明，而是一个被遗忘的旧实验。",
+              "speaker": null
+            },
+            {
+              "text": "沈默想起父亲最后几年的样子。沈怀瑾也喜欢在深夜听收音机里的国际新闻，一边听一边在笔记本上画电路图。他总说：『爱迪生不是发明了灯泡，他是发明了 persistence——让一件小事重复足够多次，就能照亮整个房间。』",
+              "speaker": null
+            },
+            {
+              "text": "那时沈默还小，不懂什么叫 persistence。现在他明白了——陶启明也在追求 persistence，只不过他想让死亡本身重复足够多次，直到变成一种常态。",
+              "speaker": null
             },
             {
               "text": "他走到沈默面前，用一种审视标本的眼神打量着他。",
@@ -2490,7 +2610,7 @@
               "speaker": null
             },
             {
-              "text": "陶启明不是一个人。白锦书被胁迫了。还有更多『沉睡者』。而10月24日——万国博览会——『全部唤醒』。",
+              "text": "陶启明不是一个人。白锦书被胁迫了。还有更多『沉睡者』。而10月24日——亚美无线电科技展——『全部唤醒』。",
               "speaker": null
             },
             {
@@ -2784,7 +2904,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "货船汽笛压住枪声的时候，我在水线下面看到了东西——一艘没有登记的小火轮，船尾绑着亚美公司的防水徽记。他们不是走私货物，是运人。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "text": "咖啡馆位于霞飞路的一条支弄里，门口挂着一块褪色的招牌：『巴黎咖啡馆』。里面只有三张桌子，柜台后面是一个懒洋洋的法国老头。",
@@ -2848,9 +2968,28 @@
               "speaker": null
             },
             {
-              "text": "你知道『大唤醒』吗？10月24日，万国博览会。",
+              "text": "你知道『大唤醒』吗？10月24日，亚美无线电科技展。",
               "speaker": "沈默",
               "expression": "neutral"
+            },
+            {
+              "text": "林若兰的声音忽然低下去，像一根弦被拨到最低音。",
+              "speaker": null
+            },
+            {
+              "text": "「若雪不是实验对象。她是志愿者。」",
+              "speaker": "林若兰",
+              "expression": "sad"
+            },
+            {
+              "text": "「她知道自己会沉睡。她以为只是睡一觉，醒来之后，就能证明陶启明的理论是对的——就能救更多人。」",
+              "speaker": "林若兰",
+              "expression": "neutral"
+            },
+            {
+              "text": "「她签字的时候，手没有抖。她说：『如果我的沉睡能让一个母亲不再失去孩子，那就值得。』」",
+              "speaker": "林若兰",
+              "expression": "sad"
             },
             {
               "text": "林若兰的脸色瞬间变得惨白。",
@@ -2871,7 +3010,7 @@
               "speaker": null
             },
             {
-              "text": "这是『第七频率』发射器的完整设计图。包括频率参数、功率设置、覆盖范围。如果陶启明在万国博览会的主展馆安装这台设备，在人群最密集的时候启动……",
+              "text": "这是『第七频率』发射器的完整设计图。包括频率参数、功率设置、覆盖范围。如果陶启明在亚美无线电科技展的主展馆安装这台设备，在人群最密集的时候启动……",
               "speaker": "林若兰",
               "expression": "thinking"
             },
@@ -3014,7 +3153,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "唱片第二层音轨里的声音，和若兰描述的三年前事故完全重合。那不是事故，是第一次公开实验。陶启明把失败包装成了意外。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "text": "陈子轩的宿舍只有六平方米，一张床、一张桌子、一个自制的工作台。墙上贴满了无线电电路图和一张褪色的『科学救国』标语。",
@@ -3442,7 +3581,7 @@
             {
               "speaker": null,
               "text": "林若兰展开一张被火燎黑边的设计图。陈子轩拿铅笔，顾老三按住纸角，小翠把账本翻到空白页。",
-              "illustration": "assets/illustrations/minimax/ch3_sc7_rain_alliance.png"
+              "illustration": "assets/illustrations/ch3_sc7_rain_alliance.png"
             },
             {
               "speaker": null,
@@ -3462,7 +3601,7 @@
             },
             {
               "speaker": "小翠",
-              "text": "通行证我想办法。百乐门里最不缺的就是把自己当大人物的人。"
+              "text": "通行证我想办法。大华饭店里最不缺的就是把自己当大人物的人。"
             },
             {
               "speaker": null,
@@ -3482,7 +3621,7 @@
             },
             {
               "speaker": null,
-              "text": "沈默看向小翠，第一次意识到，她在百乐门学到的不只是唱歌。"
+              "text": "沈默看向小翠，第一次意识到，她在大华饭店学到的不只是唱歌。"
             }
           ],
           "choices": [
@@ -3533,7 +3672,7 @@
                 "detail": "行动+10 / 老三+5 / 小翠+5",
                 "tone": "gu_laosan"
               },
-              "transition": "百乐门的后台狭窄而嘈杂。小翠把纸条塞进他手心时，指尖冰凉——那不是夜寒，是怕。"
+              "transition": "大华饭店的后台狭窄而嘈杂。小翠把纸条塞进他手心时，指尖冰凉——那不是夜寒，是怕。"
             },
             {
               "id": "ch3_c7_special_lin",
@@ -3594,7 +3733,7 @@
             },
             {
               "speaker": null,
-              "text": "顾老三站在门口望风，小翠坐在木箱上，手里攥着一张从百乐门弄来的通行证。白锦书的名字还没有写上去。"
+              "text": "顾老三站在门口望风，小翠坐在木箱上，手里攥着一张从大华饭店弄来的通行证。白锦书的名字还没有写上去。"
             },
             {
               "speaker": null,
@@ -3627,7 +3766,7 @@
             {
               "speaker": null,
               "text": "唱针落下。示波器上，两条波形先是互相撕扯，随后奇异地贴合出第三条线。那条线很细，却稳。",
-              "illustration": "assets/illustrations/minimax/ch3_sc8_suzhou_broadcast.png"
+              "illustration": "assets/illustrations/ch3_sc8_suzhou_broadcast.png"
             },
             {
               "speaker": "林若兰",
@@ -3765,7 +3904,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "第三条线不是噪声，是若雪给子轩的校准信号。她的意识被压在最底层，只能通过波形干扰来传递信息——像人在水下往上吹气泡。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "speaker": null,
@@ -3901,7 +4040,7 @@
                 "detail": "人心+5 / 小翠+15",
                 "tone": "drama"
               },
-              "transition": "百乐门的后台狭窄而嘈杂。小翠把纸条塞进他手心时，指尖冰凉——那不是夜寒，是怕。"
+              "transition": "大华饭店的后台狭窄而嘈杂。小翠把纸条塞进他手心时，指尖冰凉——那不是夜寒，是怕。"
             },
             {
               "id": "ch3_c9_c",
@@ -3971,11 +4110,32 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "编号是陶启明的控制方式，名字才是人的锚点。当沉睡者听到自己的名字被念出来，他们的意识会重新辨认自己——这是打破控制的第一步。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "text": "阁楼被改造成了一个临时作战室。墙上贴着从林若兰那里拿到的设计图、陈子轩手绘的电路草图、和一张法租界地图——上面用红笔标注了十几个点，都是最近发生过「昏倒」或「假死」事件的地点。",
               "speaker": null
+            },
+            {
+              "text": "沈默在实验室的角落发现一只积满灰尘的木箱。箱盖上用褪色的红漆写着：『沈怀瑾先生寄存——民国十六年』。",
+              "speaker": null
+            },
+            {
+              "text": "他蹲下身，手指抚过那些字迹。十六年——1927年。父亲死前一年。",
+              "speaker": null
+            },
+            {
+              "text": "箱子里是一叠发黄的电路图和一本实验日志。最后一页的日期是1928年3月14日，署名不是沈怀瑾——是陶启明。",
+              "speaker": null
+            },
+            {
+              "text": "日志里夹着一张黑白照片：年轻的陶启明站在一台机器旁边，身边是一个穿长衫的男人。那个男人侧着脸，但沈默认出了那副肩膀的弧度。",
+              "speaker": null
+            },
+            {
+              "text": "『父亲。』沈默的声音轻得像一声叹息。",
+              "speaker": "沈默",
+              "expression": "sad"
             },
             {
               "text": "沈默、林若兰、陈子轩、顾老三、和小翠围坐在小桌前。桌上摆着豆浆、油条、和一大堆写满公式的纸张。",
@@ -4034,7 +4194,7 @@
               "expression": "angry"
             },
             {
-              "text": "我们需要三样东西。第一，找到陶启明备份记忆的那个「沉睡者」。第二，找到他在万国博览会安装的新发射器。第三——",
+              "text": "我们需要三样东西。第一，找到陶启明备份记忆的那个「沉睡者」。第二，找到他在亚美无线电科技展安装的新发射器。第三——",
               "speaker": "沈默",
               "expression": "thinking"
             },
@@ -4084,7 +4244,7 @@
               "speaker": null
             },
             {
-              "text": "频率可调，功率可调。但它只能抵消半径五十米内的7830 Hz波。要想覆盖整个万国博览会主展馆……",
+              "text": "频率可调，功率可调。但它只能抵消半径五十米内的7830 Hz波。要想覆盖整个亚美无线电科技展主展馆……",
               "speaker": "周老板",
               "expression": "neutral"
             },
@@ -4098,7 +4258,7 @@
               "expression": "smile"
             },
             {
-              "text": "广播系统！对！万国博览会主展馆有一套全新的美国进口扩音系统！如果能黑进去——",
+              "text": "广播系统！对！亚美无线电科技展主展馆有一套全新的美国进口扩音系统！如果能黑进去——",
               "speaker": "陈子轩",
               "expression": "thinking"
             },
@@ -4161,7 +4321,7 @@
                 "detail": "行动+10",
                 "tone": "action"
               },
-              "transition": "博览会的人潮像一条发光的河。沈默逆着人流前进，耳边是法语、英语和上海话的混响，像一台调不准的收音机。"
+              "transition": "展览会的人潮像一条发光的河。沈默逆着人流前进，耳边是法语、英语和上海话的混响，像一台调不准的收音机。"
             },
             {
               "id": "ch4_c1_c",
@@ -4271,7 +4431,7 @@
               "speaker": null
             },
             {
-              "text": "告诉我，10月24日，万国博览会，陶启明的计划是什么。每一个细节。",
+              "text": "告诉我，10月24日，亚美无线电科技展，陶启明的计划是什么。每一个细节。",
               "speaker": "沈默",
               "expression": "thinking"
             },
@@ -4374,7 +4534,7 @@
         },
         {
           "id": "ch4_sc3",
-          "title": "万国博览会",
+          "title": "亚美无线电科技展",
           "time": "10月24日 09:00",
           "weather": "",
           "location": "法租界，万国博览会主展馆",
@@ -4385,19 +4545,19 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "录音里的频率不是普通的声波，是若雪的脑电波被转译后的声音。白锦书听到时脸色变了——他知道那是真的，因为他听过同样的声音。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
-              "text": "万国博览会主展馆是一座巨大的Art Deco风格建筑，正面是巨大的玻璃幕墙，阳光透过玻璃，在大理石地面上投下几何形状的光斑。",
+              "text": "亚美无线电科技展主展馆是一座巨大的Art Deco风格建筑，正面是巨大的玻璃幕墙，阳光透过玻璃，在大理石地面上投下几何形状的光斑。",
               "speaker": null,
               "illustration": "assets/illustrations/ch4_sc3_expo.png"
             },
             {
-              "text": "展馆内人声鼎沸，三千多名参观者涌入大厅——商人、政客、记者、学生、外国使节。",
+              "text": "展馆内人声鼎沸，一千多名参观者涌入大厅——商人、政客、记者、学生、外国使节。",
               "speaker": null
             },
             {
-              "text": "舞台上正在进行开幕式致辞。法国领事站在麦克风前，用法语说着「科学与文明的进步」。台下的人们鼓掌、交谈、拍照。",
+              "text": "舞台上正在进行开幕式致辞。苏祖圭站在麦克风前，说着「无线电技术与科学救国」。台下的人们鼓掌、交谈、拍照。",
               "speaker": null
             },
             {
@@ -4457,11 +4617,11 @@
             },
             {
               "speaker": null,
-              "text": "博览会亮得刺眼。电灯把每一块玻璃、每一只酒杯、每一枚奖章都照出虚假的洁净。没有人会想到，地下正有一台机器准备把他们变成实验记录。"
+              "text": "展览会亮得刺眼。电灯把每一块玻璃、每一只酒杯、每一枚奖章都照出虚假的洁净。没有人会想到，地下正有一台机器准备把他们变成实验记录。"
             },
             {
               "speaker": null,
-              "text": "陈子轩混在人群里，手心全是汗。他看见亚美公司的展台上写着「未来医学」，差点笑出来。未来这个词太方便了，什么债都能往后推。"
+              "text": "陈子轩混在人群里，手心全是汗。他看见亚美公司的展台上写着「无线电未来」，差点笑出来。未来这个词太方便了，什么债都能往后推。"
             },
             {
               "speaker": "林若兰",
@@ -4665,6 +4825,30 @@
               "expression": "smile"
             },
             {
+              "text": " frequencies在空气中交战，像两条互相撕咬的蛇。沈默忽然听见一个声音——不是从耳朵里进来的，是从骨头里震出来的。",
+              "speaker": null
+            },
+            {
+              "text": "「沈先生。」",
+              "speaker": "白若雪",
+              "expression": "neutral"
+            },
+            {
+              "text": "「我听见了。所有的频率我都听见了。陶启明的，你们的，还有……那些沉睡者的。他们在哭，在叫，在念自己家人的名字。」",
+              "speaker": "白若雪",
+              "expression": "sad"
+            },
+            {
+              "text": "「我不是容器。我是桥。他们借我的意识说话，我借他们的存在记住自己是谁。」",
+              "speaker": "白若雪",
+              "expression": "thinking"
+            },
+            {
+              "text": "「快一点。桥快塌了。 frequencies混在一起，我分不清哪些是我，哪些是别人。」",
+              "speaker": "白若雪",
+              "expression": "sad"
+            },
+            {
               "text": "他的话音刚落，展厅里的人群开始出现异常——有人停下脚步，眼神变得茫然；有人扶住墙壁，像是头晕；一个穿西装的男人突然倒地，周围的人惊呼起来。",
               "speaker": null
             },
@@ -4832,7 +5016,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "7830Hz是主频，但不是唯一通道。跳频可以在它切换的瞬间插入反相波，像两把钥匙同时拧进一把锁——让锁芯卡住。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "speaker": null,
@@ -4845,7 +5029,7 @@
             {
               "speaker": "白若雪",
               "text": "爸爸。",
-              "illustration": "assets/illustrations/minimax/ch4_sc6_ruoxue_echo.png"
+              "illustration": "assets/illustrations/ch4_sc6_ruoxue_echo.png"
             },
             {
               "speaker": null,
@@ -4981,7 +5165,7 @@
                 "detail": "人心+5 / 小翠+15 / 线索+1",
                 "tone": "xiao_cui"
               },
-              "transition": "百乐门的后台狭窄而嘈杂。小翠把纸条塞进他手心时，指尖冰凉——那不是夜寒，是怕。"
+              "transition": "大华饭店的后台狭窄而嘈杂。小翠把纸条塞进他手心时，指尖冰凉——那不是夜寒，是怕。"
             },
             {
               "id": "ch4_c6_special_bai",
@@ -5024,7 +5208,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "若雪的脑电波在主动对抗陶启明。她不是在求救，是在做选择——用自己的意识做屏障，保护那些沉睡者不被彻底格式化。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "speaker": null,
@@ -5142,7 +5326,7 @@
                 "detail": "行动+10 / 人心+5",
                 "tone": "action"
               },
-              "transition": "博览会的人潮像一条发光的河。沈默逆着人流前进，耳边是法语、英语和上海话的混响，像一台调不准的收音机。"
+              "transition": "展览会的人潮像一条发光的河。沈默逆着人流前进，耳边是法语、英语和上海话的混响，像一台调不准的收音机。"
             },
             {
               "id": "ch4_c7_b",
@@ -5223,7 +5407,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "一个人的名字是锚点，一百个人的名字就是网。当所有沉睡者同时说出自己的名字，他们的意识会在频率里形成共振——那是陶启明无法控制的。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "speaker": null,
@@ -5232,7 +5416,7 @@
             {
               "speaker": null,
               "text": "展馆停电一分钟。上方大厅骤然陷入黑暗，惊呼声像潮水一样压下来。地下的机器也短暂失明，只剩备用电容一闪一闪。",
-              "illustration": "assets/illustrations/minimax/ch4_sc8_blackout_minute.png"
+              "illustration": "assets/illustrations/ch4_sc8_blackout_minute.png"
             },
             {
               "speaker": "陈子轩",
@@ -5316,7 +5500,7 @@
             },
             {
               "speaker": null,
-              "text": "六十秒。展馆重新亮起。掌声、哭声、咒骂声从上方混在一起。很多人以为这只是博览会的演出事故。只有地下的人知道，他们刚从一场集体死亡里抢回一分钟。"
+              "text": "六十秒。展馆重新亮起。掌声、哭声、咒骂声从上方混在一起。很多人以为这只是展览会的演出事故。只有地下的人知道，他们刚从一场集体死亡里抢回一分钟。"
             },
             {
               "speaker": null,
@@ -5418,7 +5602,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "停电的一分钟里，备用电容只能维持基础供电。陶启明的控制网出现了缝隙——这是把姓名锚点送入沉睡者意识的唯一窗口。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "text": "隔离室的玻璃墙泛着冷光。白若雪躺在里面，脸色灰白，胸口几乎不动。显示器上的脑电波不是人的波形，是机械的、规则的脉冲，像一台坏了的钟还在走。",
@@ -5839,7 +6023,7 @@
               "speaker": "沈默",
               "expression": "thinking",
               "text": "若雪的脑电波就是最好的证词。不是文字，不是口供，是活生生的频率。只要让所有人听到她的声音，陶启明就再也无法把她当作实验品。",
-              "illustration": "assets/illustrations/clue_introspection.png"
+              "illustration": "assets/ui/clue_introspection.png"
             },
             {
               "text": "沈默按下了『彻底摧毁』的按钮。",
@@ -5993,7 +6177,30 @@
               "text": "如果声音下面还有声音，至少这一次，他愿意慢慢听。"
             }
           ],
-          "choices": [],
+          "choices": [
+            {
+              "id": "ch5_sc3_c1",
+              "text": "沈默看着白若雪安静的脸——她再也不会醒来。他伸出手，停留在她额前几寸的空气里。",
+              "rewards": {
+                "empathy": 5
+              },
+              "feedback": {
+                "title": "未完成的触碰",
+                "body": "有些告别不需要接触，只需要承认曾经靠近过。"
+              }
+            },
+            {
+              "id": "ch5_sc3_c2",
+              "text": "沈默收回手，把白布重新盖回她脸上。动作很轻，像在盖一封写了一半的信。",
+              "rewards": {
+                "reasoning": 5
+              },
+              "feedback": {
+                "title": "沉默的句点",
+                "body": "理性的选择，但心里知道，有些句点比逗号更痛。"
+              }
+            }
+          ],
           "nextScene": null,
           "ending": "弦断"
         },
@@ -6111,7 +6318,7 @@
             },
             {
               "speaker": null,
-              "text": "弦鸣后的上海没有立刻变好。报纸只说万国博览会发生电力事故，亚美公司因违规试验被查封。真正的名单被白锦书藏起来，副本交给沈默。"
+              "text": "弦鸣后的上海没有立刻变好。报纸只说亚美无线电科技展发生电力事故，亚美公司因违规试验被查封。真正的名单被白锦书藏起来，副本交给沈默。"
             },
             {
               "speaker": null,
@@ -6150,7 +6357,30 @@
               "text": "弦鸣不是胜利的声音，更像受伤的弦还在坚持震动。它提醒活下来的人：被救回来的生命，也需要很久很久，才能真正回到自己身上。"
             }
           ],
-          "choices": [],
+          "choices": [
+            {
+              "id": "ch5_sc4_c1",
+              "text": "新的沉睡者名单出现在上海各大报纸上。沈默把报纸折好，放进抽屉最深处。他知道，这场战斗还没结束。",
+              "rewards": {
+                "courage": 5
+              },
+              "feedback": {
+                "title": "未熄的火",
+                "body": "失败不是终点，是下一次行动的起点。"
+              }
+            },
+            {
+              "id": "ch5_sc4_c2",
+              "text": "沈默站在苏州河边，看着对岸新亮起的霓虹灯。有些频率听不见，但它们确实存在——就像希望，像悔恨，像所有说不出口的话。",
+              "rewards": {
+                "intuition": 5
+              },
+              "feedback": {
+                "title": "河边的独白",
+                "body": "接受不是放弃，是把重量从肩上转移到心里，继续走。"
+              }
+            }
+          ],
           "nextScene": null,
           "ending": "弦鸣"
         },
@@ -6253,7 +6483,7 @@
               "speaker": null
             },
             {
-              "text": "白锦书来报到那天，穿的是便装，不是警服。他说：『我现在管的不是犯人，是病人。』顾老三每天拉着黄包车来，车上坐的不是客人，是来找研究所看病的乡下人。小翠管账，用的是她在百乐门学的速记法，快得惊人。",
+              "text": "白锦书来报到那天，穿的是便装，不是警服。他说：『我现在管的不是犯人，是病人。』顾老三每天拉着黄包车来，车上坐的不是客人，是来找研究所看病的乡下人。小翠管账，用的是她在大华饭店学的速记法，快得惊人。",
               "speaker": null
             },
             {
@@ -6338,7 +6568,30 @@
               "text": "弦和没有完全懂。但她记住了。很多重要的事，都是先记住，很多年后才懂。"
             }
           ],
-          "choices": [],
+          "choices": [
+            {
+              "id": "ch5_sc5_c1",
+              "text": "白若雪的眼睛慢慢睁开。沈默没有说话，只是把手伸进被子里，找到她的手指，轻轻握住。",
+              "rewards": {
+                "empathy": 5
+              },
+              "feedback": {
+                "title": "第一次触碰",
+                "body": "有些话不需要说出口，掌心的温度比任何语言都诚实。"
+              }
+            },
+            {
+              "id": "ch5_sc5_c2",
+              "text": "白若雪的眼睛慢慢睁开。沈默说：「欢迎回来。上海还在，你父亲也在。」",
+              "rewards": {
+                "courage": 5
+              },
+              "feedback": {
+                "title": "最简单的欢迎",
+                "body": "有时候，最朴素的问候比最华丽的重逢更有力量。"
+              }
+            }
+          ],
           "nextScene": null,
           "ending": "弦和"
         },
@@ -6500,6 +6753,15 @@
               "text": "信是沈怀瑾写给周老板的。字迹稳，末尾却有一处墨点，像写信的人停笔太久。"
             },
             {
+              "text": "沈默转身。房间角落里，一个老人坐在轮椅上，膝上盖着一条灰色毛毯。他的脸和照片里那个男人重叠了——只是老了三十岁。",
+              "speaker": null
+            },
+            {
+              "text": "『你终于来了。』老人的声音沙哑，但每个字都清晰，『我等了很久，久到以为你永远不会打开那只箱子。』",
+              "speaker": "沈怀瑾",
+              "expression": "neutral"
+            },
+            {
               "speaker": "沈怀瑾",
               "text": "频率若被当作桥，就要有人守桥。若被当作武器，就要有人拆桥。我怕默儿继承我的手，也怕他继承我的错。"
             },
@@ -6532,7 +6794,32 @@
               "text": "他把父亲那张桥图折好，放进口袋。桥是危险的，但总有人要过河。下一次，他不会只带一把解剖刀。"
             }
           ],
-          "choices": [],
+          "choices": [
+            {
+              "id": "ch5_sc6_c1",
+              "text": "沈默跪在轮椅前，额头抵着父亲的手背。他有很多问题想问，但此刻只想确认这双手是真的，不是另一个频率投射的幻象。",
+              "rewards": {
+                "empathy": 10,
+                "inkling": 5
+              },
+              "feedback": {
+                "title": "迟到的亲近",
+                "body": "有些拥抱迟到了三十年，但温度从未衰减。"
+              }
+            },
+            {
+              "id": "ch5_sc6_c2",
+              "text": "沈默退后一步，声音比预想的更冷：「你一直在看着？看着我走错每一步？」",
+              "rewards": {
+                "reasoning": 10,
+                "inkling": 5
+              },
+              "feedback": {
+                "title": "质问",
+                "body": "真相有时候比谎言更伤人，因为它是真的。"
+              }
+            }
+          ],
           "nextScene": null,
           "ending": "弦外"
         }

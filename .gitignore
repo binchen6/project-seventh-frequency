@@ -11,6 +11,7 @@ out/
 web/out/
 target/
 build/
+jsp/
 
 # IDE and OS files
 .idea/
@@ -34,3 +35,26 @@ __pycache__/
 
 # Generated asset logs (may contain local paths)
 web/assets/generation_log.json
+
+# Test results and internal docs
+test-results/
+docs/
+review/
+research/
+
+# One-off fix/build scripts
+scripts/fix-*.cjs
+scripts/fix-*.js
+scripts/add-*.cjs
+scripts/enhance-*.cjs
+scripts/v2_*.cjs
+scripts/unify-*.cjs
+scripts/final-*.cjs
+scripts/recover_*.py
+scripts/resync_*.py
+scripts/verify-*.cjs
+scripts/generate-*.cjs
+scripts/_tmp_*
+
+# Backup files
+*.backup

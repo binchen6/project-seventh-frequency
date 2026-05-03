@@ -212,7 +212,7 @@ body::after{
   row-gap:4px;
   overflow:visible;
   min-height:auto;
-  padding:14px 24px;
+  padding:16px 28px 18px;
   color:var(--sepia-light);
   text-align:left;
   font:inherit;
@@ -1101,7 +1101,7 @@ body.reduce-effects .character-sprite.active.breathing{animation:none}
   .dialogue-text{font-size:calc(.95rem * var(--dialogue-font-scale));line-height:1.68}
   .speaker-name{font-size:.9rem}
   #choicesLayer{bottom:206px;width:94%}
-  .choice-btn{padding:12px 18px;font-size:.9rem;min-height:auto}
+  .choice-btn{padding:14px 22px 16px;font-size:.9rem;min-height:auto}
   #controlBar{min-height:72px;gap:6px;overflow-x:auto;justify-content:flex-start;padding:8px 10px}
   #controlBar .ctrl-btn{flex:0 0 auto;grid-template-columns:1fr;grid-template-areas:"icon" "label";justify-items:center;row-gap:4px;min-width:74px;min-height:50px;padding:7px 9px;font-size:.76rem}
   #controlBar .ctrl-icon{width:24px;height:18px}
@@ -1125,7 +1125,7 @@ body.reduce-effects .character-sprite.active.breathing{animation:none}
   .dialogue-box{padding:17px 22px}
   .dialogue-text{font-size:calc(1rem * var(--dialogue-font-scale));line-height:1.72}
   #choicesLayer{bottom:178px;width:88%}
-  .choice-btn{padding:13px 20px;font-size:.96rem;min-height:auto}
+  .choice-btn{padding:15px 24px 17px;font-size:.96rem;min-height:auto}
   #controlBar{min-height:64px;gap:6px}
   #controlBar .ctrl-btn{min-width:84px;padding:7px 11px;font-size:.8rem}
   #controlBar .ctrl-key{font-size:.58rem}
@@ -1149,7 +1149,7 @@ body.reduce-effects .character-sprite.active.breathing{animation:none}
   position:absolute;inset:0;z-index:55;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   background:var(--bg-darker);opacity:0;pointer-events:none;
-  transition:opacity .8s ease
+  transition:opacity 1s ease
 }
 .transition-overlay.active{opacity:1;pointer-events:auto}
 .transition-text{

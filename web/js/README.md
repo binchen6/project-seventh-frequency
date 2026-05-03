@@ -26,8 +26,8 @@
 运行浏览器冒烟测试：
 
 ```powershell
-$env:NODE_PATH='C:\Users\binchen\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\node_modules'
-& 'C:\Users\binchen\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe' scripts\smoke-test.cjs
+$env:NODE_PATH='<your-node-modules-path>'
+& 'node' scripts/smoke-test.cjs
 ```
 
 测试覆盖：
