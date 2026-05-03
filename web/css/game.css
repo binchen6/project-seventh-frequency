@@ -207,9 +207,11 @@ body::after{
   position:relative;
   display:grid;
   grid-template-columns:auto 1fr;
+  grid-template-rows:auto auto;
   column-gap:4px;
-  overflow:hidden;
-  min-height:52px;
+  row-gap:4px;
+  overflow:visible;
+  min-height:auto;
   padding:14px 24px;
   color:var(--sepia-light);
   text-align:left;
@@ -796,34 +798,62 @@ body::after{
 #historyModal,
 #saveLoadModal{
   display:none;
-  position:absolute;
-  left:50%;
+  position:fixed;
+  inset:0;
   z-index:90;
-  width:90%;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(13,10,7,.72);
+  backdrop-filter:blur(6px);
+}
+
+#historyModal{
+  flex-direction:column;
+}
+
+#saveLoadModal{
+  flex-direction:column;
+}
+
+#historyModal > div:not(:last-child),
+#saveLoadModal > .history-title,
+#saveLoadModal > .slots-grid{
   background:linear-gradient(180deg,rgba(25,18,12,.98),rgba(10,8,6,.99));
   border:1px solid var(--hairline);
   box-shadow:var(--shadow);
   backdrop-filter:blur(12px);
 }
 
-#historyModal{
-  top:10%;
+#historyModal > div:first-child,
+#saveLoadModal > .history-title{
+  width:100%;
   max-width:640px;
-  max-height:70%;
   padding:20px;
-  overflow-y:auto;
-  transform:translateX(-50%);
+  text-align:center;
 }
 
-#saveLoadModal{
-  top:15%;
+#historyModal > #historyContent{
+  width:100%;
+  max-width:640px;
+  max-height:60vh;
+  padding:20px;
+  overflow-y:auto;
+}
+
+#saveLoadModal > .slots-grid{
+  width:100%;
   max-width:500px;
   padding:24px;
-  transform:translateX(-50%);
+}
+
+#historyModal > div:last-child,
+#saveLoadModal > div:last-child{
+  margin-top:16px;
 }
 
 #historyModal.active,
-#saveLoadModal.active{display:block}
+#saveLoadModal.active{display:flex}
 
 .settings-modal{
   position:fixed;
@@ -1071,7 +1101,7 @@ body.reduce-effects .character-sprite.active.breathing{animation:none}
   .dialogue-text{font-size:calc(.95rem * var(--dialogue-font-scale));line-height:1.68}
   .speaker-name{font-size:.9rem}
   #choicesLayer{bottom:206px;width:94%}
-  .choice-btn{padding:12px 18px;font-size:.9rem}
+  .choice-btn{padding:12px 18px;font-size:.9rem;min-height:auto}
   #controlBar{min-height:72px;gap:6px;overflow-x:auto;justify-content:flex-start;padding:8px 10px}
   #controlBar .ctrl-btn{flex:0 0 auto;grid-template-columns:1fr;grid-template-areas:"icon" "label";justify-items:center;row-gap:4px;min-width:74px;min-height:50px;padding:7px 9px;font-size:.76rem}
   #controlBar .ctrl-icon{width:24px;height:18px}
@@ -1095,7 +1125,7 @@ body.reduce-effects .character-sprite.active.breathing{animation:none}
   .dialogue-box{padding:17px 22px}
   .dialogue-text{font-size:calc(1rem * var(--dialogue-font-scale));line-height:1.72}
   #choicesLayer{bottom:178px;width:88%}
-  .choice-btn{padding:13px 20px;font-size:.96rem}
+  .choice-btn{padding:13px 20px;font-size:.96rem;min-height:auto}
   #controlBar{min-height:64px;gap:6px}
   #controlBar .ctrl-btn{min-width:84px;padding:7px 11px;font-size:.8rem}
   #controlBar .ctrl-key{font-size:.58rem}
