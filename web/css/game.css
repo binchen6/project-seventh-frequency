@@ -1176,3 +1176,109 @@ body.reduce-effects .character-sprite.active.breathing{animation:none}
 .transition-overlay.active .transition-text{
   animation:glitch-color-shift .6s ease-in-out
 }
+
+
+/* ── Login Screen ─────────────────────────────── */
+#loginScreen{
+  position:fixed;inset:0;z-index:200;
+  display:none;align-items:center;justify-content:center;
+  background:radial-gradient(ellipse at 50% 30%,rgba(30,22,14,.92),rgba(8,6,4,.98));
+}
+#loginScreen::before{
+  content:'';position:absolute;top:50%;left:10%;right:10%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--deco-gold),transparent);
+  opacity:.35;animation:freqPulse 3s ease-in-out infinite;
+}
+@keyframes freqPulse{0%,100%{opacity:.15;transform:scaleX(.7)}50%{opacity:.45;transform:scaleX(1)}}
+.login-card{
+  position:relative;z-index:1;text-align:center;
+  padding:48px 40px 36px;max-width:400px;width:90%;
+  border:1px solid var(--hairline);border-radius:6px;
+  background:var(--panel);box-shadow:var(--shadow);
+}
+.login-subtitle{
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.45em;
+  color:var(--sepia-dark);text-transform:uppercase;margin-bottom:12px;
+}
+.login-title{
+  font-family:var(--font-display);font-size:1.6rem;
+  color:var(--sepia-light);margin-bottom:16px;font-weight:400;
+}
+.login-desc{
+  font-size:.82rem;color:var(--sepia-dark);line-height:1.6;margin-bottom:28px;
+}
+.login-input{
+  display:block;width:100%;padding:12px 16px;
+  font-family:var(--font-mono);font-size:.9rem;color:var(--sepia-light);
+  background:rgba(0,0,0,.35);border:1px solid var(--hairline);border-radius:4px;
+  outline:none;transition:border-color .2s;
+}
+.login-input:focus{border-color:var(--deco-gold)}
+.login-input::placeholder{color:var(--sepia-dark);opacity:.5}
+.login-btn{
+  display:block;width:100%;margin-top:16px;padding:12px;
+  font-family:var(--font-display);font-size:.95rem;letter-spacing:.12em;
+  color:var(--bg-dark);background:var(--deco-gold);
+  border:none;border-radius:4px;cursor:pointer;
+  transition:background .2s,transform .1s;
+}
+.login-btn:hover{background:var(--deco-gold-light)}
+.login-btn:active{transform:scale(.98)}
+.login-btn:disabled{opacity:.5;cursor:default}
+.login-status{
+  margin-top:14px;font-size:.78rem;color:var(--sepia-dark);min-height:1.2em;
+}
+.logout-btn{opacity:.5 !important;font-size:.78rem !important}
+
+
+/* ── Login Screen ─────────────────────────────── */
+#loginScreen{
+  position:fixed;inset:0;z-index:200;
+  display:none;align-items:center;justify-content:center;
+  background:radial-gradient(ellipse at 50% 30%,rgba(30,22,14,.92),rgba(8,6,4,.98));
+}
+#loginScreen::before{
+  content:'';position:absolute;top:50%;left:10%;right:10%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--deco-gold),transparent);
+  opacity:.35;animation:freqPulse 3s ease-in-out infinite;
+}
+@keyframes freqPulse{0%,100%{opacity:.15;transform:scaleX(.7)}50%{opacity:.45;transform:scaleX(1)}}
+.login-card{
+  position:relative;z-index:1;text-align:center;
+  padding:48px 40px 36px;max-width:400px;width:90%;
+  border:1px solid var(--hairline);border-radius:6px;
+  background:var(--panel);box-shadow:var(--shadow);
+}
+.login-subtitle{
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.45em;
+  color:var(--sepia-dark);text-transform:uppercase;margin-bottom:12px;
+}
+.login-title{
+  font-family:var(--font-display);font-size:1.6rem;
+  color:var(--sepia-light);margin-bottom:16px;font-weight:400;
+}
+.login-desc{
+  font-size:.82rem;color:var(--sepia-dark);line-height:1.6;margin-bottom:28px;
+}
+.login-input{
+  display:block;width:100%;padding:12px 16px;
+  font-family:var(--font-mono);font-size:.9rem;color:var(--sepia-light);
+  background:rgba(0,0,0,.35);border:1px solid var(--hairline);border-radius:4px;
+  outline:none;transition:border-color .2s;
+}
+.login-input:focus{border-color:var(--deco-gold)}
+.login-input::placeholder{color:var(--sepia-dark);opacity:.5}
+.login-btn{
+  display:block;width:100%;margin-top:16px;padding:12px;
+  font-family:var(--font-display);font-size:.95rem;letter-spacing:.12em;
+  color:var(--bg-dark);background:var(--deco-gold);
+  border:none;border-radius:4px;cursor:pointer;
+  transition:background .2s,transform .1s;
+}
+.login-btn:hover{background:var(--deco-gold-light)}
+.login-btn:active{transform:scale(.98)}
+.login-btn:disabled{opacity:.5;cursor:default}
+.login-status{
+  margin-top:14px;font-size:.78rem;color:var(--sepia-dark);min-height:1.2em;
+}
+.logout-btn{opacity:.5 !important;font-size:.78rem !important}

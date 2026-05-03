@@ -9,6 +9,18 @@
 <link rel="stylesheet" href="../css/game.css">
 </head>
 <body>
+
+<!-- Login Screen -->
+<div id="loginScreen" style="display:none">
+  <div class="login-card">
+    <div class="login-subtitle">第 七 频 率</div>
+    <h1 class="login-title">频率档案室</h1>
+    <p class="login-desc">输入你的频率ID，同步你的案卷记录。<br>新频率将自动创建。</p>
+    <input type="text" id="loginUserId" class="login-input" placeholder="频率ID（任意字母/数字组合）" maxlength="32" autocomplete="off">
+    <button id="loginBtn" class="login-btn">进入档案室</button>
+    <div id="loginStatus" class="login-status"></div>
+  </div>
+</div>
 <div id="gameContainer">
 <div id="canvasLayer">
 <canvas id="gameCanvas"></canvas>
@@ -117,6 +129,7 @@
 <div class="settings-actions">
 <button class="ctrl-btn" id="resetSettings">恢复默认</button>
 <button class="ctrl-btn" id="applySettings">完成</button>
+<button class="ctrl-btn" id="btnLogout" style="margin-top:12px;opacity:.55;font-size:.78rem">🔄 切换频率</button>
 </div>
 </div>
 </div>
@@ -143,6 +156,7 @@
 <button class="ctrl-btn danger-btn" id="btnBack" title="返回主菜单 Esc" aria-label="返回主菜单"><span class="ctrl-icon">↩</span><span class="ctrl-label">返回</span><span class="ctrl-key">Esc</span></button>
 </div>
 </div>
-<script src="../js/engine.js"></script>
+<script src="../js/storage.js"></script>
+  <script src="../js/engine.js"></script>
 </body>
 </html>

@@ -36,6 +36,7 @@ for (const file of ['fonts.css', 'game.css']) {
   copyRecursive(path.join(root, 'web', 'css', file), path.join(dist, 'css', file));
 }
 
+copyRecursive(path.join(root, 'web', 'js', 'storage.js'), path.join(dist, 'js', 'storage.js'));
 copyRecursive(path.join(root, 'web', 'js', 'engine.js'), path.join(dist, 'js', 'engine.js'));
 copyRecursive(path.join(root, 'web', 'index.html'), path.join(dist, 'index.html'));
 copyRecursive(path.join(root, 'web', 'jsp', 'game.html'), path.join(dist, 'jsp', 'game.html'));

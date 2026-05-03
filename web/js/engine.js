@@ -1,6 +1,7 @@
 // Unified runtime for 《第七频率》
 // This is the single supported game engine used by game.jsp.
-const Storage={get:(k,def)=>{try{return JSON.parse(localStorage.getItem('sf_'+k))??def}catch(e){return def}},set:(k,v)=>localStorage.setItem('sf_'+k,JSON.stringify(v))}
+// Storage is now managed by StorageManager (see storage.js)
+const Storage = new StorageManager()
 const canvas=document.getElementById('gameCanvas')
 const ctx=canvas.getContext('2d')
 let canvasW,canvasH
@@ -29,8 +30,34 @@ let chapterMap=new Map(),resizeFrame=0,lastDpr=0,glitchTimer=0,signalMeters=null
 function resizeCanvas(){const c=el.canvasLayer;const dpr=window.devicePixelRatio||1;const w=c.clientWidth;const h=c.clientHeight;if(w===canvasW&&h===canvasH&&dpr===lastDpr)return;canvasW=w;canvasH=h;lastDpr=dpr;canvas.width=Math.max(1,Math.floor(canvasW*dpr));canvas.height=Math.max(1,Math.floor(canvasH*dpr));canvas.style.width=canvasW+'px';canvas.style.height=canvasH+'px';ctx.setTransform(dpr,0,0,dpr,0,0);if(state.bgImage)drawBackground()}
 function scheduleResize(){if(resizeFrame)return;resizeFrame=requestAnimationFrame(()=>{resizeFrame=0;resizeCanvas()})}
 resizeCanvas();window.addEventListener('resize',scheduleResize,{passive:true})
-async function loadScript(){try{const res=await fetch('../data/script.json');if(!res.ok)throw new Error('HTTP '+res.status+' '+res.statusText);scriptData=await res.json();echoes=scriptData.echoes||[];chapterMap=new Map(scriptData.chapters.map(ch=>[ch.id,ch]));initGame()}catch(e){console.error('加载剧本失败:',e);if(el.sceneLoader)el.sceneLoader.classList.add('hidden');el.speakerName.style.display='none';el.dialogueText.textContent='剧本加载失败，请确认 data/script.json 已部署并刷新页面。'}}
-function initGame(){const url=new URL(window.location.href);if(url.searchParams.get('chapter')==='continue'){restoreProgress({chapter:Storage.get('current_chapter',1),scene:Storage.get('current_scene',0),dialogueIndex:Storage.get('current_dialogue',0),params:Storage.get('params',state.params),affection:Storage.get('affection',state.affection),flags:Storage.get('flags',{}),history:Storage.get('history',[])})}else{state.chapter=parseInt(url.searchParams.get('chapter'))||1;state.scene=0;state.dialogueIndex=0}loadScene(state.chapter,state.scene,{dialogueIndex:state.dialogueIndex})}
+async function loadScript(){try{const res=await fetch('../data/script.json');if(!res.ok)throw new Error('HTTP '+res.status+' '+res.statusText);scriptData=await res.json();echoes=scriptData.echoes||[];chapterMap=new Map(scriptData.chapters.map(ch=>[ch.id,ch]));await Storage.init();await startWithLogin()}catch(e){console.error('加载剧本失败:',e);if(el.sceneLoader)el.sceneLoader.classList.add('hidden');el.speakerName.style.display='none';el.dialogueText.textContent='剧本加载失败，请确认 data/script.json 已部署并刷新页面。'}}
+
+async function startWithLogin(){const loginScreen=document.getElementById('loginScreen');const loginInput=document.getElementById('loginUserId');const loginBtn=document.getElementById('loginBtn');const loginStatus=document.getElementById('loginStatus');
+if(!loginScreen){initGame();return}
+
+// Check URL param ?uid=xxx for auto-login
+const url=new URL(window.location.href);
+const urlUid=url.searchParams.get('uid');
+if(urlUid){const success=await Storage.login(urlUid);if(success){loginScreen.style.display='none';initGame();await Storage.cleanup();return}}
+
+// Try auto-login
+const loggedIn=await Storage.autoLogin();
+if(loggedIn&&Storage.userId){loginScreen.style.display='none';initGame();await Storage.cleanup();return}
+
+// Show login screen
+loginScreen.style.display='flex';
+loginInput.focus();
+
+async function doLogin(){const userId=loginInput.value.trim();if(!userId){loginStatus.textContent='请输入频率ID';return}
+loginStatus.textContent='正在连接...';loginBtn.disabled=true;
+const exists=await Storage.userExists(userId);
+const success=await Storage.login(userId);
+loginBtn.disabled=false;
+if(success){loginStatus.textContent=exists?'频率已同步':'新频率已创建';loginStatus.style.color='var(--deco-gold)';setTimeout(()=>{loginScreen.style.display='none';initGame();Storage.cleanup()},400)}else{loginStatus.textContent='连接失败，请重试'}}
+
+loginBtn.addEventListener('click',doLogin);
+loginInput.addEventListener('keydown',(e)=>{if(e.key==='Enter')doLogin()})}
+async function initGame(){const url=new URL(window.location.href);if(url.searchParams.get('chapter')==='continue'){restoreProgress({chapter:Storage.get('current_chapter',1),scene:Storage.get('current_scene',0),dialogueIndex:Storage.get('current_dialogue',0),params:Storage.get('params',state.params),affection:Storage.get('affection',state.affection),flags:Storage.get('flags',{}),history:Storage.get('history',[])})}else{state.chapter=parseInt(url.searchParams.get('chapter'))||1;state.scene=0;state.dialogueIndex=0}loadScene(state.chapter,state.scene,{dialogueIndex:state.dialogueIndex})}
 function clampSceneIndex(chapter,sceneIndex){return Math.max(0,parseInt(sceneIndex)||0)}
 function clampDialogueIndex(chapter,sceneIndex,dialogueIndex){const dialogues=chapterMap.get('ch'+chapter)?.scenes?.[sceneIndex]?.dialogues||[];return clamp(dialogueIndex,0,dialogues.length)}
 function restoreProgress(data={}){const chapter=parseInt(data.chapter)||1;const scene=clampSceneIndex(chapter,data.scene);state.chapter=chapter;state.scene=scene;state.dialogueIndex=clampDialogueIndex(chapter,scene,data.dialogueIndex);state.params={...state.params,...(data.params||{})};state.affection={...state.affection,...(data.affection||{})};state.flags={...(data.flags||{})};state.history=Array.isArray(data.history)?[...data.history]:[]}
@@ -77,7 +104,7 @@ function showEchoRipple(echo){const ripple=document.createElement('div');ripple.
 function triggerGlitch(intensity=5,duration=220){if(settings.reduceEffects)return;el.glitchOverlay.textContent='';const fragment=document.createDocumentFragment();for(let i=0;i<intensity;i++){const strip=document.createElement('div');strip.className='glitch-strip';strip.style.top=Math.random()*100+'%';strip.style.height=(2+Math.random()*6)+'px';strip.style.background=Math.random()>0.5?'var(--neon-cyan)':'var(--neon-purple)';fragment.appendChild(strip)}el.glitchOverlay.appendChild(fragment);el.glitchOverlay.classList.add('active');clearTimeout(glitchTimer);glitchTimer=setTimeout(()=>el.glitchOverlay.classList.remove('active'),duration)}
 function showChapterEnd(){stopBGM();const chData=chapterMap.get('ch'+state.chapter);el.chapterEndTitle.textContent=chData?'— '+chData.title+' 完 —':'— 章节完成 —';if(el.chapterEndSub)el.chapterEndSub.textContent=chData?(chapterBriefs[chData.id]||'你的选择已经写入案卷。'):'你的选择已经写入案卷。';el.nextChapterBtn.textContent=state.chapter>=scriptData.chapters.length?'返回主菜单':'继续';el.chapterEnd.classList.add('active')}
 el.nextChapterBtn.addEventListener('click',()=>{el.chapterEnd.classList.remove('active');const next=state.chapter+1;const unlocked=Storage.get('unlocked_chapters',[1]);if(next<=scriptData.chapters.length&&!unlocked.includes(next)){unlocked.push(next);Storage.set('unlocked_chapters',unlocked)}window.location.href=MENU_URL})
-function saveProgress(){Storage.set('current_chapter',state.chapter);Storage.set('current_scene',state.scene);Storage.set('current_dialogue',state.dialogueIndex);Storage.set('params',state.params);Storage.set('affection',state.affection);Storage.set('flags',state.flags);Storage.set('history',state.history)}
+function saveProgress(){Storage.set('current_chapter',state.chapter);Storage.set('current_scene',state.scene);Storage.set('current_dialogue',state.dialogueIndex);Storage.set('params',state.params);Storage.set('affection',state.affection);Storage.set('flags',state.flags);Storage.set('history',state.history);Storage.forceSave()}
 
 // === BGM 播放 ===
 let bgmAudio=null;let pendingBgmPath=null;let currentBgmPath=null;

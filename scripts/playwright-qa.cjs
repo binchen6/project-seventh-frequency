@@ -160,7 +160,7 @@ async function runTests() {
   await page1.close();
 
   // ========== 测试 2: 游戏页 game.html (静态版) ==========
-  console.log('\n🎮 测试 2: 游戏页 (jsp/game.html?chapter=1)');
+  console.log('\n🎮 测试 2: 游戏页 (jsp/game.html?chapter=1&uid=qa-test)');
   const page2 = await browser.newPage({ viewport: { width: 1920, height: 1080 } });
   
   page2.on('console', msg => {
@@ -180,7 +180,7 @@ async function runTests() {
     }
   });
 
-  await page2.goto(`${BASE_URL}/jsp/game.html?chapter=1`, { waitUntil: 'networkidle', timeout: 30000 });
+  await page2.goto(`${BASE_URL}/jsp/game.html?chapter=1&uid=qa-test`, { waitUntil: 'networkidle', timeout: 30000 });
   
   // 等待剧本加载
   await page2.waitForTimeout(3000);
@@ -314,7 +314,7 @@ async function runTests() {
   });
 
   // JSP 文件作为纯 HTML 测试（因为没开 Tomcat）
-  await page3.goto(`${BASE_URL}/jsp/game.jsp?chapter=1`, { waitUntil: 'networkidle', timeout: 30000 });
+  await page3.goto(`${BASE_URL}/jsp/game.jsp?chapter=1&uid=qa-test`, { waitUntil: 'networkidle', timeout: 30000 });
   await page3.waitForTimeout(3000);
   
   // 检查 JSP 指令是否泄漏到页面（如果没有 Tomcat 处理的话）
@@ -361,7 +361,7 @@ async function runTests() {
   const page5 = await browser.newPage({ viewport: { width: 1920, height: 1080 } });
   
   // 使用 Performance API 获取加载时间
-  await page5.goto(`${BASE_URL}/jsp/game.html?chapter=1`, { waitUntil: 'networkidle', timeout: 30000 });
+  await page5.goto(`${BASE_URL}/jsp/game.html?chapter=1&uid=qa-test`, { waitUntil: 'networkidle', timeout: 30000 });
   
   const perfMetrics = await page5.evaluate(() => {
     const nav = performance.getEntriesByType('navigation')[0];
