@@ -634,7 +634,7 @@ body::after{
   position:absolute;
   right:28px;
   bottom:164px;
-  z-index:75;
+  z-index:105;
   display:grid;
   gap:8px;
   width:min(340px,calc(100vw - 56px));
