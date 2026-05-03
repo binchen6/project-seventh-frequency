@@ -1,7 +1,22 @@
 // Unified runtime for 《第七频率》
 // This is the single supported game engine used by game.jsp.
 // Storage is now managed by StorageManager (see storage.js)
-const Storage = new StorageManager()
+// Storage fallback for cache-mismatch scenarios
+const Storage = typeof StorageManager !== 'undefined'
+  ? new StorageManager()
+  : {
+      userId: 'guest',
+      get(k, d) { try { const v = localStorage.getItem(k); return v !== null ? JSON.parse(v) : d; } catch(e) { return d; } },
+      set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch(e) {} },
+      init() { return Promise.resolve(true); },
+      login(id) { this.userId = id || 'guest'; return Promise.resolve(true); },
+      logout() { this.userId = 'guest'; return Promise.resolve(); },
+      autoLogin() { return Promise.resolve(false); },
+      userExists() { return Promise.resolve(false); },
+      cleanup() { return Promise.resolve({ removed: 0 }); },
+      forceSave() { return Promise.resolve(); }
+    };
+
 const canvas=document.getElementById('gameCanvas')
 const ctx=canvas.getContext('2d')
 let canvasW,canvasH
