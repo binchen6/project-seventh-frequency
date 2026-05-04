@@ -581,12 +581,14 @@ body::after{
 }
 
 .signal-track{
+  display:block;
   height:5px;
   overflow:hidden;
   background:rgba(196,167,125,.16);
 }
 
 .signal-fill{
+  display:block;
   width:0%;
   height:100%;
   background:linear-gradient(90deg,var(--sepia-dark),var(--deco-gold));
@@ -1282,3 +1284,40 @@ body.reduce-effects .character-sprite.active.breathing{animation:none}
   margin-top:14px;font-size:.78rem;color:var(--sepia-dark);min-height:1.2em;
 }
 .logout-btn{opacity:.5 !important;font-size:.78rem !important}
+
+/* -- 数值说明区块 -- */
+.stat-help-section{
+  margin-top:8px;
+  padding:10px 24px;
+  border-top:1px solid rgba(196,167,125,.15);
+}
+.stat-help-title{
+  color:var(--sepia-dark);
+  font-size:.72rem;
+  letter-spacing:.12em;
+  margin-bottom:10px;
+  font-family:var(--font-mono);
+}
+.stat-help-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5px 12px;
+}
+.stat-help-item{
+  display:flex;
+  gap:5px;
+  align-items:baseline;
+  font-size:.7rem;
+  line-height:1.55;
+}
+.stat-name{
+  color:var(--deco-gold);
+  font-family:var(--font-mono);
+  white-space:nowrap;
+  min-width:2.8em;
+  font-weight:600;
+}
+.stat-desc{
+  color:var(--sepia-base);
+  opacity:.72;
+}

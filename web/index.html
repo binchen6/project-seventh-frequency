@@ -122,7 +122,9 @@ const chapters=[
 {id:4,title:'频率战争',desc:'万国博览会，相消干涉，记忆保险',thumb:'assets/illustrations/ch4_sc3_expo.png',locked:true},
 {id:5,title:'假死真生',desc:'意识共振，最终抉择，弦断或弦和',thumb:'assets/illustrations/ch5_sc2_choice.png',locked:true}
 ]
-const Storage={get:(k,def)=>{try{return JSON.parse(localStorage.getItem('sf_'+k))??def}catch(e){return def}},set:(k,v)=>localStorage.setItem('sf_'+k,JSON.stringify(v))}
+const _uid=localStorage.getItem('sf_last_user');
+const _prefix='sf_'+(_uid?_uid+':':'');
+const Storage={get:(k,def)=>{try{return JSON.parse(localStorage.getItem(_prefix+k))??def}catch(e){return def}},set:(k,v)=>localStorage.setItem(_prefix+k,JSON.stringify(v))}
 function renderChapters(){const grid=document.getElementById('chaptersGrid');const unlocked=Storage.get('unlocked_chapters',[1]);grid.innerHTML=chapters.map(ch=>{const isUnlocked=unlocked.includes(ch.id);return'<div class="chapter-card '+(isUnlocked?'':'locked')+'" data-id="'+ch.id+'" onclick="startChapter('+ch.id+')">'+(isUnlocked?'':'<div class="lock-icon">🔒</div>')+'<div class="chapter-number">0'+ch.id+'</div><img class="chapter-thumb" src="'+ch.thumb+'" alt="'+ch.title+'" onerror="this.style.display=\'none\'"><div class="chapter-title">'+ch.title+'</div><div class="chapter-desc">'+ch.desc+'</div></div>'}).join('')}
 function startChapter(id){const unlocked=Storage.get('unlocked_chapters',[1]);if(!unlocked.includes(id))return;window.location.href='jsp/game.html?chapter='+id}
 function triggerGlitch(){const title=document.getElementById('mainTitle');title.parentElement.classList.add('glitch-active');setTimeout(()=>title.parentElement.classList.remove('glitch-active'),400)}

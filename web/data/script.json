@@ -5946,57 +5946,48 @@
           ],
           "choices": [
             {
-              "id": "ch5_c2_a",
-              "text": "选择方案一：彻底摧毁（弦断）",
+              "text": "「摧毁所有数据，结束这场噩梦。有些罪恶不该被记录，只能被湮灭。」（弦断）",
               "effects": {
-                "DRAMA": 20
+                "DRAMA": 25,
+                "CLUE": 1
               },
               "nextScene": "ch5_sc3",
               "feedback": {
-                "title": "人心回响",
-                "body": "一句话改变了在场人的距离，有些信任不是当场开口，却会在后面回头。",
-                "detail": "人心+20",
-                "tone": "drama"
-              },
-              "transition": "火焰吞噬了最后一张纸。沈默看着灰烬被风吹散，知道有些东西再也找不回来——包括他自己的一部分。"
+                "title": "弦断 — 终结的回声",
+                "body": "如果你愿意摧毁，意味着你相信有些真相不该被保留。一个时代需要有人把弦割断，即使手上会流血。",
+                "detail": "人心+25 / 线索+1",
+                "tone": "special"
+              }
             },
             {
-              "id": "ch5_c2_b",
-              "text": "选择方案二：选择性剥离（弦鸣）",
+              "text": "「把陶启明从沉睡者中剥离出去，只留下干净的记录。」（弦鸣）",
               "effects": {
-                "ACTION": 20
+                "ACTION": 25
               },
               "nextScene": "ch5_sc4",
               "feedback": {
-                "title": "行动推进",
-                "body": "你把局面往前推了一步，风险也随脚步声一起靠近。",
-                "detail": "行动+20",
+                "title": "弦鸣 — 选择的回响",
+                "body": "不是摧毁，不是保留——而是分离。把一个人的罪从所有人的记忆里剔出去，需要比摧毁更大的勇气。",
+                "detail": "行动+25",
                 "tone": "action"
-              },
-              "transition": "身体比脑子先动起来。沈默没有给自己犹豫的余地，因为犹豫是留给有退路的人。"
+              }
             },
             {
-              "id": "ch5_c2_c",
-              "text": "选择方案三：记忆共振（弦和）",
+              "text": "「让若雪和陶启明都留在频率里，用一张空白唱片承载全部回声。」（弦和）",
               "effects": {
-                "TECH": 20
+                "TECH": 25,
+                "ZHOU": 5
               },
               "nextScene": "ch5_sc5",
               "feedback": {
-                "title": "技术校准",
-                "body": "频率、线路和误差被重新校准，下一次面对机器时会多一点把握。",
-                "detail": "技术+20",
+                "title": "弦和 — 共振的余音",
+                "body": "最高超的技术不是杀死一个频率，而是让两个冲突的频率在同一个共振腔里找到共存的方式。",
+                "detail": "技术+25 / 弦外+5",
                 "tone": "tech"
-              },
-              "transition": "技术层面的突破让局面不同了。沈默把新参数记在本子上，纸页边缘还留着刚才静电的焦痕。"
+              }
             },
             {
-              "id": "ch5_c2_d",
               "text": "「周老板……这一切，是不是还没完？」（弦外·隐藏）",
-              "effects": {
-                "ZHOU": 20
-              },
-              "nextScene": "ch5_sc6",
               "condition": {
                 "params": {
                   "CLUE": {
@@ -6004,87 +5995,16 @@
                   }
                 }
               },
+              "effects": {
+                "ZHOU": 20
+              },
+              "nextScene": "ch5_sc6",
               "feedback": {
                 "title": "弦外回声",
                 "body": "周老板藏了很久的旧账，被你敲出一声极轻的回音。",
                 "detail": "弦外+20",
                 "tone": "zhou"
-              },
-              "transition": "周老板的话在沈默脑子里转了三圈。老人知道的不比他少，只是不愿意全说。沈默记下每一个停顿和重音，往弦外走去。"
-            },
-            {
-              "id": "ch5_c2_special_drama",
-              "text": "「把真相公开，让白若雪自己成为证词。」",
-              "condition": {
-                "params": {
-                  "DRAMA": {
-                    "min": 45
-                  }
-                }
-              },
-              "special": true,
-              "effects": {
-                "DRAMA": 10,
-                "CLUE": 1
-              },
-              "flag": "public_truth",
-              "nextScene": "ch5_sc3",
-              "feedback": {
-                "title": "隐藏脉冲",
-                "body": "只有在当前数值足够时才会出现的选择被触发，故事的暗线向前亮了一瞬。",
-                "detail": "人心+10 / 线索+1",
-                "tone": "special"
-              },
-              "transition": "真相公开的瞬间，白若雪不再只是一个名字，而成为了一段无法删除的证词。"
-            },
-            {
-              "id": "ch5_c2_special_action",
-              "text": "「冲进核心室，手动拔掉陶启明的主控。」",
-              "condition": {
-                "params": {
-                  "ACTION": {
-                    "min": 45
-                  }
-                }
-              },
-              "special": true,
-              "effects": {
-                "ACTION": 10
-              },
-              "flag": "core_breach",
-              "nextScene": "ch5_sc4",
-              "feedback": {
-                "title": "隐藏脉冲",
-                "body": "只有在当前数值足够时才会出现的选择被触发，故事的暗线向前亮了一瞬。",
-                "detail": "行动+10",
-                "tone": "special"
-              },
-              "transition": "核心室的门被撞开时，陶启明的主控板上出现了不该有的火花。"
-            },
-            {
-              "id": "ch5_c2_special_tech",
-              "text": "「重写最后一段回声，把陶启明的数据导入空白唱片。」",
-              "condition": {
-                "params": {
-                  "TECH": {
-                    "min": 45
-                  }
-                }
-              },
-              "special": true,
-              "effects": {
-                "TECH": 10,
-                "ZHOU": 5
-              },
-              "flag": "rewrote_last_echo",
-              "nextScene": "ch5_sc5",
-              "feedback": {
-                "title": "隐藏脉冲",
-                "body": "只有在当前数值足够时才会出现的选择被触发，故事的暗线向前亮了一瞬。",
-                "detail": "技术+10 / 弦外+5",
-                "tone": "special"
-              },
-              "transition": "最后一段回声被重写时，空白唱片开始记录一段不属于任何人的记忆。"
+              }
             }
           ]
         },
